@@ -1,0 +1,224 @@
+//
+// Normalise
+//
+
+@import "modern-normalize";
+
+//
+// Layout
+//
+
+// Set a nice, large font size
+html { font-size: 21px }
+
+// Smaller font size in mobile
+$mobilebreakpoint: 480px;
+@media all and (max-width:$mobilebreakpoint) {
+  html { font-size: 18px }
+}
+
+// Even larger font size for full screen desktop usage
+$fullscreenbreakpoint: 1700px;
+@media all and (min-width:$fullscreenbreakpoint) {
+  html { font-size: 24px }
+}
+
+// Fix up spacing and padding
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#content {
+  padding: 1rem;      // A little padding on all sides
+  max-width: 27.8rem; // Keep the container from getting overly wide
+  margin-left: auto;  // Make margins even
+  margin-right: auto;
+}
+
+//
+// Type
+//
+
+// Basic typographic settings
+
+// Fonts
+$sansfontstack: sans-serif;
+
+// Colours
+$main-fg-color: #111;
+$main-bg-color: #fafafa;
+
+body {
+  font-family: $sansfontstack;
+  font-size: 1rem;
+  line-height: 1.5;
+  hyphens: auto;
+}
+
+// Space between paragraphs, but make sure not to add it for the very last
+// paragraph
+p + * {
+  margin-top: 1em;
+}
+
+// Lower contrast by making the text dark grey and the background light grey
+body {
+  color: $main-fg-color;
+  background-color: $main-bg-color;
+}
+
+// Always use subpixel font rendering
+html {
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+// A bunch of OpenType features
+body {
+  font-variant-ligatures: common-ligatures contextual;
+  font-variant-numeric: oldstyle-nums proportional-nums;
+  font-kerning: normal;
+}
+
+//
+// Headings and titles
+//
+
+// Basic headings used only for structure and hierarchy within a page's main
+// content
+
+h1 {
+  font-size: 1rem;
+  font-weight: inherit;
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.08em;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 0.9rem;
+  font-weight: inherit;
+  font-style: italic;
+  margin-top: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+// The title of the current page
+
+header {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01rem;
+}
+
+//
+// Links and selections
+//
+
+// Links that clear descenders and have a pleasant, light underline.
+
+$link-underline-color: green;
+$link-color-active:    red;
+
+@mixin link-gradient($bg, $fg) {
+  background: linear-gradient($bg, $bg),
+              linear-gradient($bg, $bg),
+              linear-gradient($fg, $fg);
+}
+
+@mixin link-shadow($color) {
+  text-shadow:
+    0.03em  0       $color,
+    -0.03em 0       $color,
+    0       0.03em  $color,
+    0       -0.03em $color,
+    0.06em  0       $color,
+    -0.06em 0       $color,
+    0.09em  0       $color,
+    -0.09em 0       $color,
+    0.12em  0       $color,
+    -0.12em 0       $color,
+    0.15em  0       $color,
+    -0.15em 0       $color;
+}
+
+// The only links we want to have this formatting are in the article tag (i.e.
+// not the navigation)
+article * a:link,
+article * a:visited {
+  color: $main-fg-color;
+  text-decoration: none;
+  @include link-gradient($main-bg-color, $link-underline-color);
+  background-size: 0.05em 1px,
+                   0.05em 1px,
+                   1px    1px;
+  background-repeat:
+    no-repeat,
+    no-repeat,
+    repeat-x;
+  background-position:
+    0%   85%,
+    100% 85%,
+    0%   85%;
+  @include link-shadow($main-bg-color);
+}
+
+article * a:link:active,
+article * a:visited:active {
+  color: $link-color-active;
+}
+
+// Hide the way the links were created when highlighting by changing the
+// background colour to the same colour as the selection.
+$selection-color: darkgreen;
+article * a:link::selection,
+article * a:visited::selection {
+  @include link-shadow($selection-color);
+}
+
+// Colour selections
+::selection {
+  background: $selection-color;
+}
+
+//
+// Other elements
+//
+
+// Subtle copyright notice that switches to the optical weight ideal for the
+// smaller size, and dynamically adjusts the space above it for the screen size.
+//
+// We use flex to add half the viewport's height to the bottom of the page, and
+// then position the footer _inside_ this added space.
+//
+// We also remove the margin usually added to the bottom of the page, instead
+// moving the footer up into the half-viewport space.
+footer {
+  display: flex;
+  font-size: 0.5rem;
+  height: 50vh;
+  margin-bottom: -1rem;
+}
+footer p {
+  align-self: flex-end;
+  padding-bottom: 1rem;
+}
+
+// Abbreviations
+
+// Small-caps
+abbr {
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.05em;
+}
+
+// Remove dotted underline
+abbr[title] {
+  text-decoration: none;
+}
+
+// Show a help cursor
+abbr[title] {
+  cursor: help;
+}

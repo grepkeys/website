@@ -1,0 +1,24 @@
+{
+  "name": "GrepKeys",
+  "version": "0.0.1",
+  "description": "A wesite to find your perfect keyboard",
+  "scripts": {
+    "build": "hugo",
+    "deploy": "./deploy.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grepkeys/website.git"
+  },
+  "author": "GrepKeys <https://github.com/grepkeys>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/grepkeys/website/issues"
+  },
+  "homepage": "https://grepkeys.github.io",
+  "devDependencies": {
+    "autoprefixer": "^9.4.7",
+    "cssnano": "^4.1.8",
+    "postcss-cli": "^6.1.1"
+  }
+}

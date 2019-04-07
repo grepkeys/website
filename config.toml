@@ -1,0 +1,7 @@
+baseURL = "https://grepkeys.github.io/"
+languageCode = "en-uk"
+title = "GrepKeys"
+theme = "grepkeys"
+
+[author]
+  name = "GrepKeys"

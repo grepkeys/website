@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {{ partial "head" . }}
+    {{ partial "title" . }}
+  </head>
+
+  <body>
+    <div id="content">
+      {{ partial "nav" . }}
+      <header>{{ .Title }}</header>
+
+      <section id="landtext">
+        {{ .Content }}
+      </section>
+
+      <article>
+        {{ range .Pages }}
+          <div class="card">
+            <a class="carlink" href="{{ .URL }}">
+              <p>{{ .Summary }}</p>
+              <p class="cardtitle">{{ .Title }}</p>
+            </a>
+          </div>
+        {{ end }}
+      </article>
+
+      {{ partial "footer" . }}
+    </div>
+  </body>
+</html>

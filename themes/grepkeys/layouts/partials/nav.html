@@ -1,0 +1,10 @@
+<div id="navwrapper">
+  <nav>
+    <p><a id="navtitle" href="/">{{ .Site.Title }}</a></p>
+    <ul id="mainlinks">
+      {{ range where .Site.Pages.ByTitle "Type" "main" }}
+        <li><a href="{{ .URL }}">{{ .Title }}</a>
+      {{ end }}
+    </ul>
+  </nav>
+</div>
