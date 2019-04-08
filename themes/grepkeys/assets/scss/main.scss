@@ -43,7 +43,8 @@ $fullscreenbreakpoint: 1700px;
 // Basic typographic settings
 
 // Fonts
-$sansfontstack: sans-serif;
+$sansfontstack: ff-nexus-sans, "Nexus Sans Pro", sans-serif;
+$seriffontstack: ff-nexus-mix, "Nexus Mix Pro", $sansfontstack;
 
 // Colours
 $main-fg-color: #111;
