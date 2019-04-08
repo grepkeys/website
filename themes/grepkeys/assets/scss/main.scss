@@ -49,6 +49,9 @@ $seriffontstack: ff-nexus-mix, "Nexus Mix Pro", $sansfontstack;
 // Colours
 $fg-color:  #111;
 $bg-color:  #fafafa;
+// ---
+$red:       #ab0613;
+$macosblue: #c1ddff;
 
 body {
   font-family: $sansfontstack;
@@ -119,8 +122,8 @@ header {
 
 // Links that clear descenders and have a pleasant, light underline.
 
-$link-underline-color: green;
-$link-color-active:    red;
+$link-underline-color: $fg-color;
+$link-color-hover:     $red;
 
 @mixin link-gradient($bg, $fg) {
   background: linear-gradient($bg, $bg),
@@ -165,14 +168,14 @@ article * a:visited {
   @include link-shadow($bg-color);
 }
 
-article * a:link:active,
-article * a:visited:active {
-  color: $link-color-active;
+article * a:link:hover,
+article * a:visited:hover {
+  color: $link-color-hover;
 }
 
 // Hide the way the links were created when highlighting by changing the
 // background colour to the same colour as the selection.
-$selection-color: darkgreen;
+$selection-color: $macosblue;
 article * a:link::selection,
 article * a:visited::selection {
   @include link-shadow($selection-color);
