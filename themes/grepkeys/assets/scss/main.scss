@@ -47,11 +47,12 @@ $sansfontstack: ff-nexus-sans, "Nexus Sans Pro", sans-serif;
 $seriffontstack: ff-nexus-mix, "Nexus Mix Pro", $sansfontstack;
 
 // Colours
-$fg-color:  #111;
+$fg-color:  #111111;
 $bg-color:  #fafafa;
 // ---
 $red:       #ab0613;
 $macosblue: #c1ddff;
+$grey:      #777777;
 
 body {
   font-family: $seriffontstack;
@@ -121,52 +122,17 @@ header {
 // Links and selections
 //
 
-// Links that clear descenders and have a pleasant, light underline.
+// Links
 
-$link-underline-color: $fg-color;
-$link-color-hover:     $red;
-
-@mixin link-gradient($bg, $fg) {
-  background: linear-gradient($bg, $bg),
-              linear-gradient($bg, $bg),
-              linear-gradient($fg, $fg);
-}
-
-@mixin link-shadow($color) {
-  text-shadow:
-    0.03em  0       $color,
-    -0.03em 0       $color,
-    0       0.03em  $color,
-    0       -0.03em $color,
-    0.06em  0       $color,
-    -0.06em 0       $color,
-    0.09em  0       $color,
-    -0.09em 0       $color,
-    0.12em  0       $color,
-    -0.12em 0       $color,
-    0.15em  0       $color,
-    -0.15em 0       $color;
-}
+$link-color:       $fg-color;
+$link-color-hover: $red;
 
 // The only links we want to have this formatting are in the article tag (i.e.
 // not the navigation)
 article * a:link,
 article * a:visited {
-  color: $fg-color;
+  color: $link-color;
   text-decoration: none;
-  @include link-gradient($bg-color, $link-underline-color);
-  background-size: 0.05em 1px,
-                   0.05em 1px,
-                   1px    1px;
-  background-repeat:
-    no-repeat,
-    no-repeat,
-    repeat-x;
-  background-position:
-    0%   85%,
-    100% 85%,
-    0%   85%;
-  @include link-shadow($bg-color);
 }
 
 article * a:link:hover,
@@ -174,15 +140,9 @@ article * a:visited:hover {
   color: $link-color-hover;
 }
 
-// Hide the way the links were created when highlighting by changing the
-// background colour to the same colour as the selection.
-$selection-color: $macosblue;
-article * a:link::selection,
-article * a:visited::selection {
-  @include link-shadow($selection-color);
-}
+// Selections
 
-// Colour selections
+$selection-color: $macosblue;
 ::selection {
   background: $selection-color;
 }
