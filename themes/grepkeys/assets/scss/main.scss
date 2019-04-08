@@ -50,7 +50,7 @@ $seriffontstack: ff-nexus-mix, "Nexus Mix Pro", $sansfontstack;
 $fg-color:  #111111;
 $bg-color:  #fafafa;
 // ---
-$red:       #ab0613;
+$lime:      #018f69;
 $macosblue: #c1ddff;
 $grey:      #777777;
 
@@ -125,7 +125,7 @@ header {
 // Links
 
 $link-color:       $fg-color;
-$link-color-hover: $red;
+$link-color-hover: $lime;
 
 // The only links we want to have this formatting are in the article tag (i.e.
 // not the navigation)
@@ -176,7 +176,7 @@ nav li a:hover {
 }
 
 #navtitle:hover {
-  color: $red;
+  color: $lime;
 }
 
 //
