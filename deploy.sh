@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 # Get us into the root of the project
-cd $(git rev-parse --show-toplevel)
+projroot=$(git rev-parse --show-toplevel)
+cd $projroot
 origpwd=$(pwd)
 
 # We stash (but only if there are unstaged changes) to make sure the version of
@@ -15,7 +16,7 @@ fi
 # So the only reason the public folder would be different to GitHub is if others
 # have made changes. To avoid merge conflicts, pull in everyone else's changes
 # before running Hugo.
-cd public && git pull > /dev/null && cd -
+cd public && git pull > /dev/null && cd $projroot
 rm -r public/*
 hugo > /dev/null
 
