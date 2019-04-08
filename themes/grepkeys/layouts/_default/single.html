@@ -10,6 +10,13 @@
       <header>{{ .Title }}</header>
 
       <article>
+        <!-- Only show hero image if this is a switch or keyboard page (in
+          contrast -->
+        <!-- to e.g. the about page). -->
+        {{ $section := .Section }}
+        {{ if or (eq $section "keyboards") (eq $section "switches") }}
+          <img class="listimg" src="/img/{{ .BaseFileName }}.jpg">
+        {{ end }}
         {{.Content}}
       </article>
       {{ partial "footer" . }}
