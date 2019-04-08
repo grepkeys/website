@@ -18,7 +18,7 @@
         {{ range .Pages }}
           <div class="card">
             <a class="carlink" href="{{ .URL }}">
-              <p>{{ .Summary }}</p>
+              <img class="listimg" src="/img/{{ .BaseFileName }}.jpg">
               <p class="cardtitle">{{ .Title }}</p>
             </a>
           </div>
