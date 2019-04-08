@@ -188,6 +188,38 @@ article * a:visited::selection {
 }
 
 //
+// Nav bar
+//
+
+nav {
+  font-family: $sansfontstack;
+}
+
+nav li {
+  display: inline;
+  margin-right: 1rem;
+}
+
+nav li a {
+  color: $grey;
+  text-decoration: none;
+  transition: 250ms color ease-out;
+}
+
+nav li a:hover {
+  color: $fg-color;
+}
+
+#navtitle {
+  color: $fg-color;
+  font-weight: bold;
+}
+
+#navtitle:hover {
+  color: $red;
+}
+
+//
 // Other elements
 //
 
