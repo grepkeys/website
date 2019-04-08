@@ -1,9 +1,13 @@
 #!/usr/bin/env bash
 
-echo -e "\e[0;32mDeploying updates to GitHub...\e[0m"
+origpwd=$(pwd)
 
+# We stash to make sure the version of the website committed to
+# grepkeys.github.io matches what the website looked like as of the last commit.
+git stash
 rm -r public/*
-hugo
+hugo > /dev/null
+git stash pop
 
 cd public
 git add . > /dev/null
@@ -12,4 +16,4 @@ msg="Rebuilding site $(date)"
 git commit -m "$msg" > /dev/null
 
 git push origin master > /dev/null
-cd ..
+cd "$origpwd"
