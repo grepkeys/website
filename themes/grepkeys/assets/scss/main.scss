@@ -133,6 +133,7 @@ article * a:link,
 article * a:visited {
   color: $link-color;
   text-decoration: none;
+  transition: 250ms color ease-out;
 }
 
 article * a:link:hover,
