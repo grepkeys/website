@@ -11,6 +11,11 @@ if ! git diff-index --quiet HEAD --; then
   git stash --include-untracked --keep-index
 fi
 
+# I never run `hugo` by itself during normal development -- only `hugo server`.
+# So the only reason the public folder would be different to GitHub is if others
+# have made changes. To avoid merge conflicts, pull in everyone else's changes
+# before running Hugo.
+cd public && git pull > /dev/null && cd -
 rm -r public/*
 hugo > /dev/null
 
@@ -19,7 +24,6 @@ if ! git diff-index --quiet HEAD --; then
 fi
 
 cd public
-git pull > /dev/null
 git add . > /dev/null
 
 msg="Rebuilding site $(date)"
