@@ -219,3 +219,8 @@ abbr[title] {
 abbr[title] {
   cursor: help;
 }
+
+// Make all images fit the environment they are in
+article img {
+  width: 100%;
+}
