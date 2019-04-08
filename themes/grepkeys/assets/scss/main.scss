@@ -47,8 +47,8 @@ $sansfontstack: ff-nexus-sans, "Nexus Sans Pro", sans-serif;
 $seriffontstack: ff-nexus-mix, "Nexus Mix Pro", $sansfontstack;
 
 // Colours
-$main-fg-color: #111;
-$main-bg-color: #fafafa;
+$fg-color:  #111;
+$bg-color:  #fafafa;
 
 body {
   font-family: $sansfontstack;
@@ -65,8 +65,8 @@ p + * {
 
 // Lower contrast by making the text dark grey and the background light grey
 body {
-  color: $main-fg-color;
-  background-color: $main-bg-color;
+  color: $fg-color;
+  background-color: $bg-color;
 }
 
 // Always use subpixel font rendering
@@ -148,9 +148,9 @@ $link-color-active:    red;
 // not the navigation)
 article * a:link,
 article * a:visited {
-  color: $main-fg-color;
+  color: $fg-color;
   text-decoration: none;
-  @include link-gradient($main-bg-color, $link-underline-color);
+  @include link-gradient($bg-color, $link-underline-color);
   background-size: 0.05em 1px,
                    0.05em 1px,
                    1px    1px;
@@ -162,7 +162,7 @@ article * a:visited {
     0%   85%,
     100% 85%,
     0%   85%;
-  @include link-shadow($main-bg-color);
+  @include link-shadow($bg-color);
 }
 
 article * a:link:active,
