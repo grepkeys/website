@@ -221,6 +221,63 @@ nav li a:hover {
 }
 
 //
+// Homepage
+//
+
+// Vertically center (well, not really -- a little less space on top than on the
+// bottom) content on homepage
+.home article {
+  margin-top: calc(30vh - 8rem);
+}
+
+// Make the text above the list of pages larger (since the pages are absolutely
+// huge it looks a bit odd to have regularly-sized text next to them)
+#greeting {
+  font-size: 1.5rem;
+}
+
+// List of pages
+
+// Remove standard link formatting
+#pages a {
+  background-image: none;
+}
+
+// Use larger fonts and add some space above and below
+#pages div {
+  font-size: 3rem;
+  margin-top: 1rem;
+}
+
+// Add a green highlight that grows on height upon hover for the important pages
+// of the website
+.mainpage p {
+  position: relative;
+  display: inline-block;
+}
+.mainpage p::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  background: rgba($brightlime, 0.5);
+  left: 0;
+  bottom: 0;
+  height: 0.6em;
+  z-index: -1;
+  transition: 500ms height cubic-bezier(0.35, 0, 0, 1);
+}
+.mainpage p:hover::after {
+  height: 1em;
+}
+
+// The less important pages switch to a sans serif font in a faded grey to give
+// more emphasis to the more important pages
+.fadedpage {
+  font-family: $sansfontstack;
+  color: $grey;
+}
+
+//
 // Other elements
 //
 
