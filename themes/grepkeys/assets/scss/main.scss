@@ -149,6 +149,44 @@ $selection-color: $macosblue;
 }
 
 //
+// Card list
+//
+
+// We need to use this exact timing of transition several times, so put it into
+// a mixin for reusability.
+@mixin card-transition($property) {
+  transition: 300ms $property cubic-bezier(0, 0, 0.33, 1);
+}
+
+// Base format
+.card {
+  width: 100%;
+
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+
+  border-radius: 0.1rem;
+  border: 1px solid $grey;
+
+  background-color: white;
+}
+
+// Add a shadow and a slight movement upward upon hover
+.card {
+  box-shadow: 0 1px 15px rgba(27, 31, 35, .15);
+  @include card-transition(all);
+}
+.card:hover {
+  box-shadow: 0 5px 15px rgba($lime, .3);
+  transform: translateY(-1px);
+}
+
+// Slightly larger font for the title of each card
+.card .cardtitle {
+  font-size: 1.1rem;
+}
+
+//
 // Nav bar
 //
 
