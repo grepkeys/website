@@ -47,12 +47,12 @@ $sansfontstack: ff-nexus-sans, "Nexus Sans Pro", sans-serif;
 $seriffontstack: ff-nexus-mix, "Nexus Mix Pro", $sansfontstack;
 
 // Colours
-$fg-color:  #111111;
-$bg-color:  #fafafa;
+$fg-color:   #111111;
+$bg-color:   #fafafa;
 // ---
-$lime:      #018f69;
-$macosblue: #c1ddff;
-$grey:      #777777;
+$lime:       #018f69;
+$brightlime: #0cf28f;
+$grey:       #777777;
 
 body {
   font-family: $seriffontstack;
@@ -143,7 +143,7 @@ article * a:visited:hover {
 
 // Selections
 
-$selection-color: $macosblue;
+$selection-color: rgba($brightlime, 0.2);
 ::selection {
   background: $selection-color;
 }
