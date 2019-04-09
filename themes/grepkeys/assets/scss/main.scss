@@ -119,33 +119,24 @@ header {
 }
 
 //
-// Links and selections
+// Links
 //
 
-// Links
-
-$link-color:       $fg-color;
-$link-color-hover: $lime;
-
+// Use a trick using a gradient to create a very basic, easy to control and
+// position underline. I decided to use this simpler approach despite it not
+// avoiding descenders to keep complexity to a minimum.
+//
 // The only links we want to have this formatting are in the article tag (i.e.
 // not the navigation)
-article * a:link,
-article * a:visited {
-  color: $link-color;
+article a:link,
+article a:visited {
+  color: $fg-color;
   text-decoration: none;
-  transition: 250ms color ease-out;
-}
 
-article * a:link:hover,
-article * a:visited:hover {
-  color: $link-color-hover;
-}
-
-// Selections
-
-$selection-color: rgba($brightlime, 0.2);
-::selection {
-  background: $selection-color;
+  background-image: linear-gradient(to right, $fg-color 100%, rgba(0,0,0,0) 0);
+  background-size: 1px 1px;
+  background-repeat: repeat-x;
+  background-position: 0 calc(1em + 4px);
 }
 
 //
@@ -268,4 +259,10 @@ abbr[title] {
 // Make all images fit the environment they are in
 article img {
   width: 100%;
+}
+
+// Selections
+
+::selection {
+  background: rgba($brightlime, 0.2);
 }
