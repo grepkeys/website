@@ -168,7 +168,7 @@ article a:visited {
   @include card-transition(all);
 }
 .card:hover {
-  box-shadow: 0 5px 15px rgba($lime, .3);
+  box-shadow: 0 2px 15px rgba($lime, .3);
   transform: translateY(-1px);
 }
 
