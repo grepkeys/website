@@ -178,6 +178,12 @@ article a:visited {
   font-size: 1.1rem;
 }
 
+// Remove the underlink links usually get (the overspecificity's purpose is to
+// override the link formatting's high specificity)
+.card .cardlink {
+  background-image: none;
+}
+
 //
 // Nav bar
 //
