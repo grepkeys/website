@@ -191,8 +191,11 @@ $selection-color: $macosblue;
 // Nav bar
 //
 
+// Make nav bar sans serif to offset it from the body of the website and add a
+// little space below.
 nav {
   font-family: $sansfontstack;
+  margin-bottom: 1rem;
 }
 
 // Collapse nav bar list items into one line
