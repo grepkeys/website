@@ -130,7 +130,7 @@ header {
 // not the navigation)
 article a:link,
 article a:visited {
-  color: $fg-color;
+  color: inherit;
   text-decoration: none;
 
   background-image: linear-gradient(to right, $fg-color 100%, rgba(0,0,0,0) 0);
