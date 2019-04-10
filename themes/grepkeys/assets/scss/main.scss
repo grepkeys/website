@@ -128,8 +128,7 @@ header {
 //
 // The only links we want to have this formatting are in the article tag (i.e.
 // not the navigation)
-article a:link,
-article a:visited {
+article a:any-link {
   color: inherit;
   text-decoration: none;
 
