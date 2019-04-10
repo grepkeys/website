@@ -18,7 +18,7 @@ fi
 # before running Hugo.
 cd public && git pull > /dev/null && cd $projroot
 rm -r public/*
-hugo > /dev/null
+hugo --minify > /dev/null
 
 if ! git diff-index --quiet HEAD --; then
   git stash pop
