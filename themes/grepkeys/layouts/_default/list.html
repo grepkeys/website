@@ -16,7 +16,7 @@
 
       <article>
         {{ range .Pages }}
-          <div class="card">
+          <div class="card {{ if (eq .Section "switches") }}smallcard{{ end }}">
             <a class="cardlink" href="{{ .URL }}">
               <img class="listimg" src="/img/{{ .BaseFileName }}.jpg">
               <p class="cardtitle">{{ .Title }}</p>
