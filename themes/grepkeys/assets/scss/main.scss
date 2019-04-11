@@ -229,9 +229,12 @@ nav li a:hover {
 //
 
 // Vertically center (well, not really -- a little less space on top than on the
-// bottom) content on homepage
+// bottom) content on homepage.
+//
+// We use padding because negative values are not possible, and we don't want
+// the top of the homepage to be cut off.
 .home article {
-  margin-top: calc(30vh - 8rem);
+  padding-top: calc(40vh - 10rem);
 }
 
 // Make the text above the list of pages larger (since the pages are absolutely
