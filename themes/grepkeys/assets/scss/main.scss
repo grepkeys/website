@@ -256,8 +256,8 @@ nav li a:hover {
   margin-top: 1rem;
 }
 
-// Add a green highlight that grows on height upon hover for the important pages
-// of the website
+// Add a green highlight that becomes more saturated and becomes larger upon
+// hover for the important pages of the website
 .mainpage p {
   position: relative;
   display: inline-block;
@@ -266,15 +266,16 @@ nav li a:hover {
   content: "";
   position: absolute;
   width: 100%;
-  background: rgba($brightlime, 0.5);
+  background: rgba($brightlime, 0.3);
   left: 0;
   bottom: 0;
   height: 0.6em;
   z-index: -1;
-  transition: height 500ms cubic-bezier(0.35, 0, 0, 1);
+  transition: height 500ms cubic-bezier(0.35, 0, 0, 1), background 500ms cubic-bezier(0.35, 0, 0, 1);
 }
 .mainpage p:hover::after {
   height: 1em;
+  background: rgba($brightlime, 0.5);
 }
 
 // The less important pages switch to a sans serif font in a faded grey to give
