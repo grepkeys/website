@@ -182,6 +182,13 @@ article a:any-link {
   background-image: none;
 }
 
+// For pages where we want the cards to be in two columns
+.smallcard {
+  display: inline-block;
+  width: calc(50% - 1rem);
+  margin-right: calc(1rem - 0.25rem);
+}
+
 //
 // Nav bar
 //
