@@ -15,14 +15,16 @@
       </section>
 
       <article>
-        {{ range .Pages }}
-          <div class="card {{ if (eq .Section "switches") }}smallcard{{ end }}">
-            <a class="cardlink" href="{{ .URL }}">
-              <img class="listimg" src="/img/{{ .BaseFileName }}.jpg">
-              <p class="cardtitle">{{ .Title }}</p>
-            </a>
-          </div>
-        {{ end }}
+        <div class="cards">
+          {{ range .Pages }}
+            <div class="card {{ if (eq .Section "switches") }}smallcard{{ end }}">
+              <a class="cardlink" href="{{ .URL }}">
+                <img class="listimg" src="/img/{{ .BaseFileName }}.jpg">
+                <p class="cardtitle">{{ .Title }}</p>
+              </a>
+            </div>
+          {{ end }}
+        </div>
       </article>
 
       {{ partial "footer" . }}
