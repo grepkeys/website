@@ -142,12 +142,6 @@ article a:any-link {
 // Card list
 //
 
-// We need to use this exact timing of transition several times, so put it into
-// a mixin for reusability.
-@mixin card-transition($property) {
-  transition: 300ms $property cubic-bezier(0, 0, 0.33, 1);
-}
-
 // Base format
 .card {
   width: 100%;
@@ -164,7 +158,8 @@ article a:any-link {
 // hover.
 .card {
   box-shadow: 0 1px 15px rgba(27, 31, 35, .15);
-  @include card-transition(all);
+  transition: box-shadow 300ms cubic-bezier(0, 0, 0.33, 1),
+    transform 300ms cubic-bezier(0, 0, 0.33, 1);
 }
 .card:hover {
   box-shadow: 0 2px 15px rgba($lime, .3);
@@ -210,7 +205,7 @@ nav li {
 nav li a {
   color: $grey;
   text-decoration: none;
-  transition: 250ms color ease-out;
+  transition: color 250ms ease-out;
 }
 nav li a:hover {
   color: $fg-color;
@@ -270,7 +265,7 @@ nav li a:hover {
   bottom: 0;
   height: 0.6em;
   z-index: -1;
-  transition: 500ms height cubic-bezier(0.35, 0, 0, 1);
+  transition: height 500ms cubic-bezier(0.35, 0, 0, 1);
 }
 .mainpage p:hover::after {
   height: 1em;
