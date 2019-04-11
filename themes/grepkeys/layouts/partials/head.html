@@ -2,6 +2,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://use.typekit.net/nng3cqg.css">
 
-{{ with resources.Get "scss/main.scss" | toCSS | postCSS }}
-  <style>{{ .Content | safeCSS }}</style>
-{{ end }}
+{{ $styles := resources.Get "scss/main.scss" | toCSS | postCSS | fingerprint }}
+
+<link rel="stylesheet"
+      href="{{ $styles.Permalink }}"
+      integrity="{{ $styles.Data.Integrity }}"
+      media="screen">
