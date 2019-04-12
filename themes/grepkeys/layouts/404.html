@@ -3,7 +3,9 @@
     {{ partial "head" . }}
     {{ partial "title" . }}
   </head>
-  <body class="home 404">
+  <body class="home">
+    {{ partial "nav" . }}
+
     <main>
       <p id="bighi">404</p>
       <p>Page not found. Go <a href="/">home</a>?</p>
