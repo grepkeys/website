@@ -199,9 +199,12 @@ nav {
 }
 
 // Collapse nav bar list items into one line
+//
+// The `- 0.25rem` is there to remove the word space `inline-block` adds between
+// elements
 nav li {
-  display: inline;
-  margin-right: 1rem;
+  display: inline-block;
+  margin-right: calc(1rem - 0.25rem);
 }
 
 // Fade nav bar items, but make them fully coloured on hover
