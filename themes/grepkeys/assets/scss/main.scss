@@ -237,7 +237,7 @@ nav li a:hover {
 // We use padding because negative values are not possible, and we don't want
 // the top of the homepage to be cut off.
 .home main {
-  padding-top: calc(40vh - 10rem);
+  padding-top: calc(50vh - 10rem);
 }
 
 // Make the text above the list of pages larger (since the pages are absolutely
