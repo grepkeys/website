@@ -5,15 +5,14 @@
     {{ partial "title" . }}
   </head>
   <body class="home">
+    {{ partial "nav" . }}
+
     <main>
       <div id="greeting">
         <p id="bighi">Hi,</p>
-        <p id="subhi">welcome to GrepKeys, the best way to find your perfect keyboard.</p>
-      </div>
-      <div id="pages">
-        <div class="mainpage"><p><a href="/keyboards">Keyboards</a></p></div>
-        <div class="mainpage"><p><a href="/switches">Switches</a></p></div>
-        <div class="fadedpage"><p><a href="/about">About</a></p></div>
+        <p>welcome to GrepKeys, the best way to find your perfect
+          <a href="/keyboards">keyboard</a>. Or maybe take a look at <a
+             href="switches">our collection of switches</a>?</p>
       </div>
     </main>
   </body>
