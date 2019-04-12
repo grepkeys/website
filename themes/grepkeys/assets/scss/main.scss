@@ -133,9 +133,9 @@ main a:any-link {
   text-decoration: none;
 
   background-image: linear-gradient(to right, $fg-color 100%, rgba(0,0,0,0) 0);
-  background-size: 1px 1px;
+  background-size: 0.05em 0.05em;
   background-repeat: repeat-x;
-  background-position: 0 calc(1em + 4px);
+  background-position: 0 1.2em;
 }
 
 //
