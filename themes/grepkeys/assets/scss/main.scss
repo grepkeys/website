@@ -228,7 +228,7 @@ nav li a:hover {
 }
 
 //
-// Homepage
+// Homepage and 404
 //
 
 // Vertically center (well, not really -- a little less space on top than on the
@@ -246,46 +246,26 @@ nav li a:hover {
   font-size: 1.5rem;
 }
 
-// List of pages
-
-// Remove standard link formatting
-#pages a {
-  background-image: none;
-}
-
-// Use larger fonts and add some space above and below
-#pages div {
-  font-size: 3rem;
-  margin-top: 1rem;
-}
-
-// Add a green highlight that becomes more saturated and becomes larger upon
-// hover for the important pages of the website
-.mainpage p {
-  position: relative;
-  display: inline-block;
-}
-.mainpage p::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  background: rgba($brightlime, 0.3);
-  left: 0;
-  bottom: 0;
-  height: 0.6em;
-  z-index: -1;
-  transition: height 500ms cubic-bezier(0.35, 0, 0, 1), background 500ms cubic-bezier(0.35, 0, 0, 1);
-}
-.mainpage p:hover::after {
-  height: 1em;
-  background: rgba($brightlime, 0.5);
-}
-
-// The less important pages switch to a sans serif font in a faded grey to give
-// more emphasis to the more important pages
-.fadedpage {
+// Make the main 'Hi' greeting larger than the surrounding text to give it more
+// importance
+#bighi {
   font-family: $sansfontstack;
-  color: $grey;
+  font-size: 1.75rem;
+}
+
+// Reduce space between 'Hi!' and rest of greeting
+#bighi + p {
+  margin-top: 0.5rem;
+}
+
+// Add a slightly rounded green highlight upon hover to the links inside the
+// greeting
+#greeting a {
+  border-radius: 0.1rem;
+  transition: background-color 500ms cubic-bezier(0, 0, 0.33, 1);
+}
+#greeting a:hover {
+  background-color: rgba($brightlime, 0.2);
 }
 
 //
