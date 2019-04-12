@@ -231,23 +231,23 @@ nav li a:hover {
 // Vertically center (well, not really -- a little less space on top than on the
 // bottom) content on homepage.
 //
-// We use padding because negative values are not possible, and we don't want
-// the top of the homepage to be cut off.
+// We use padding because we don't want the top of the homepage to be cut off
+// (negative values are not possible for padding)
 .home main {
   padding-top: calc(50vh - 10rem);
 }
 
-// Make the text above the list of pages larger (since the pages are absolutely
-// huge it looks a bit odd to have regularly-sized text next to them)
+// Increase font size of greeting on homepage to counteract large amount of
+// whitespace
 #greeting {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 // Make the main 'Hi' greeting larger than the surrounding text to give it more
 // importance
 #bighi {
   font-family: $sansfontstack;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
 }
 
 // Reduce space between 'Hi!' and rest of greeting
