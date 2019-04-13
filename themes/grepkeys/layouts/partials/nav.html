@@ -2,7 +2,7 @@
   <ul>
     <li><a id="navtitle" href="/">{{ .Site.Title }}</a></li>
     {{ range where .Site.Pages.ByTitle "Type" "main" }}
-      <li><a href="{{ .URL }}">{{ .Title }}</a>
+      <li><a href="{{ .Permalink }}">{{ .Title }}</a>
     {{ end }}
   </ul>
 </nav>

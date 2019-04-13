@@ -14,7 +14,7 @@
       <!-- to e.g. the about page). -->
       {{ $section := .Section }}
       {{ if or (eq $section "keyboards") (eq $section "switches") }}
-        <img class="listimg" src="/img/{{ .BaseFileName }}.jpg">
+        <img class="listimg" src="/img/{{ .File.BaseFileName }}.jpg">
       {{ end }}
       {{.Content}}
     </main>
