@@ -138,6 +138,12 @@ main a:any-link {
   background-position: 0 1.2em;
 }
 
+// Fade link text upon click to make website feel more interactive without being
+// distracting (like hover)
+main a:any-link:active {
+  color: rgba($fg-color, 0.5)
+}
+
 //
 // Card list
 //
