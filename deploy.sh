@@ -5,6 +5,15 @@ projroot=$(git rev-parse --show-toplevel)
 cd $projroot
 origpwd=$(pwd)
 
+# Make sure the local copy of the repository is completely synchronised with the
+# remote.
+#
+# Yes, I do know that this is probably a bad idea, however, since this project
+# is very simple and we aren't using branches or any other Git features beyond
+# the very basics it should be fine.
+git pull
+git push
+
 # We stash (but only if there are unstaged changes) to make sure the version of
 # the website committed to grepkeys.github.io matches what the website looked
 # like as of the last commit.
