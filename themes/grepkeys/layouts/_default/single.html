@@ -20,13 +20,12 @@
     {{ end }}
 
     <main>
-      <!-- Only show hero image if this is a switch or keyboard page (in
-        contrast -->
-      <!-- to e.g. the about page). -->
-      {{ $section := .Section }}
-      {{ if (eq $section "keyboards") or (eq $section "switches") }}
+      <!-- Only show hero image if this is a switch or keyboard page (in -->
+      <!-- contrast to e.g. the about page). -->
+      {{ if or (eq .Section "keyboards") (eq .Section "switches") }}
         <img class="listimg" src="/img/{{ .File.BaseFileName }}.jpg">
       {{ end }}
+
       {{.Content}}
     </main>
 
