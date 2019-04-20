@@ -1,6 +1,6 @@
 ---
 title: "Apple Wireless Keyboard"
-purchase_link: https://www.amazon.com/Apple-Wireless-Keyboard-Bluetooth-Refurbished/dp/B0146YF1FO?ref_=fsclp_pl_dp_1
+purchase_link: https://www.amazon.com/Apple-Wireless-Keyboard-Bluetooth-Refurbished/dp/B0146YF1FO
 condition: renewed
 ---
 
