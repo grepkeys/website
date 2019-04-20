@@ -122,6 +122,23 @@ header {
 // Links
 //
 
+// Mixin to clear link formatting
+@mixin remove_link_formatting {
+  // This removes the link formatting applied using the clever hack a little
+  // down the file. Although this mixin is used inside that section, the
+  // backgorund-image that the hack uses to work overrides this one.
+  background-image: none;
+
+  // As themes/grepkeys/assets/js/main.js adds a hack to fix link underlines on
+  // Android that uses text-decoration, we also want to clear that.
+  text-decoration: none;
+
+  // Although standard links do this, any links that are found outside the main
+  // tag still have the horrible default colours, so a removal of  link
+  // formatting still needs this.
+  color: inherit;
+}
+
 // Use a trick using a gradient to create a very basic, easy to control and
 // position underline. I decided to use this simpler approach despite it not
 // avoiding descenders to keep complexity to a minimum.
@@ -141,23 +158,6 @@ main a:any-link {
 // distracting (like hover)
 main a:any-link:active {
   color: rgba($fg-color, 0.5)
-}
-
-// Mixin to clear link formatting
-@mixin remove_link_formatting {
-  // This removes the link formatting applied using the clever hack a little up
-  // the file. Although this mixin is used inside that section, the
-  // backgorund-image that the hack uses to work overrides this one.
-  background-image: none;
-
-  // As themes/grepkeys/assets/js/main.js adds a hack to fix link underlines on
-  // Android that uses text-decoration, we also want to clear that.
-  text-decoration: none;
-
-  // Although standard links do this, any links that are found outside the main
-  // tag still have the horrible default colours, so a removal of  link
-  // formatting still needs this.
-  color: inherit;
 }
 
 //
