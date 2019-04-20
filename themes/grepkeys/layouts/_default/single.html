@@ -8,18 +8,18 @@
     {{ partial "nav" . }}
     <header>{{ .Title }}</header>
 
-    <p class="buybutton">
-      {{ if (isset .Params "purchase_link") }}
+    {{ if isset .Params "purchase_link" }}
+      <p class="buybutton">
         <a href="{{ .Params.purchase_link }}">Buy now</a>
-      {{ end }}
-    </p>
+      </p>
+    {{ end }}
 
     <main>
       <!-- Only show hero image if this is a switch or keyboard page (in
         contrast -->
       <!-- to e.g. the about page). -->
       {{ $section := .Section }}
-      {{ if or (eq $section "keyboards") (eq $section "switches") }}
+      {{ if (eq $section "keyboards") or (eq $section "switches") }}
         <img class="listimg" src="/img/{{ .File.BaseFileName }}.jpg">
       {{ end }}
       {{.Content}}
