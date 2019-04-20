@@ -3,7 +3,6 @@
 # Get us into the root of the project
 projroot=$(git rev-parse --show-toplevel)
 cd $projroot
-origpwd=$(pwd)
 
 # Make sure the local copy of the repository is completely synchronised with the
 # remote.
@@ -40,4 +39,3 @@ msg="Rebuilding site $(date)"
 git commit -m "$msg" > /dev/null
 
 git push origin master > /dev/null
-cd "$origpwd"
