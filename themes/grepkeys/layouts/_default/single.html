@@ -8,6 +8,12 @@
     {{ partial "nav" . }}
     <header>{{ .Title }}</header>
 
+    <p class="buybutton">
+      {{ if (isset .Params "purchase_link") }}
+        <a href="{{ .Params.purchase_link }}">Buy now</a>
+      {{ end }}
+    </p>
+
     <main>
       <!-- Only show hero image if this is a switch or keyboard page (in
         contrast -->
