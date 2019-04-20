@@ -9,7 +9,7 @@
       integrity="{{ $styles.Data.Integrity }}"
       media="screen">
 
-{{ $js := resources.Get "js/main.js" | fingerprint }}
+{{ $js := resources.Get "js/main.js" | resources.Minify | fingerprint }}
 
 <script type="text/javascript"
         src="{{ $js.Permalink }}"
