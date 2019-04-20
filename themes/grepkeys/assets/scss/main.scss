@@ -317,6 +317,40 @@ main img {
   width: 100%;
 }
 
+// 'Buy now' button
+
+// Base
+.buybutton {
+  display: inline-block;
+  font-family: $sansfontstack;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+
+  // Original line height makes padding uneven
+  line-height: 1.1;
+}
+
+// Reset default link styling
+.buybutton a {
+  text-decoration: none;
+  color: rgba($fg-color, 0.8);
+}
+
+// Shadow and lime-green background colour react to hover and click
+.buybutton {
+  background-color: rgba($brightlime, 0.3);
+  box-shadow: 0 3px 8px rgba($fg-color, .1);
+  transition: background-color 250ms ease-out, box-shadow 250ms ease-out;
+}
+.buybutton:hover {
+  background-color: rgba($brightlime, 0.25);
+  box-shadow: 0 4px 15px rgba($fg-color, .18);
+}
+.buybutton:active {
+  background-color: rgba($brightlime, 0.35);
+  box-shadow: 0 2px 8px rgba($fg-color, .3);
+}
+
 // Selections
 
 ::selection {
