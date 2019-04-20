@@ -7,21 +7,21 @@
 function getMobileOperatingSystem() {
   var userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-    // Windows Phone must come first because its UA also contains "Android"
-    if (/windows phone/i.test(userAgent)) {
-        return "Windows Phone";
-    }
+  // Windows Phone must come first because its UA also contains "Android"
+  if (/windows phone/i.test(userAgent)) {
+    return "Windows Phone";
+  }
 
-    if (/android/i.test(userAgent)) {
-        return "Android";
-    }
+  if (/android/i.test(userAgent)) {
+    return "Android";
+  }
 
-    // iOS detection from: http://stackoverflow.com/a/9039885/177710
-    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-        return "iOS";
-    }
+  // iOS detection from: http://stackoverflow.com/a/9039885/177710
+  if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+    return "iOS";
+  }
 
-    return "unknown";
+  return "unknown";
 }
 
 
@@ -31,8 +31,8 @@ if (getMobileOperatingSystem() == 'Android') {
   var style = document.createElement('style');
   style.innerHTML =
     'main a:any-link {' +
-      'background-image: none;' +
-      'text-decoration: underline;' +
+    'background-image: none;' +
+    'text-decoration: underline;' +
     '}';
 
   // Insert new styles before first script tag
