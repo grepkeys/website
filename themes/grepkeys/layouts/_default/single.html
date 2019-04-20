@@ -8,9 +8,14 @@
     {{ partial "nav" . }}
     <header>{{ .Title }}</header>
 
+    <!-- 'Buy now' button that shows the condition of the product being sold -->
+    <!-- at the button's link (e.g. refurbished) -->
     {{ if isset .Params "purchase_link" }}
       <p class="buybutton">
-        <a href="{{ .Params.purchase_link }}">Buy now</a>
+        <a href="{{ .Params.purchase_link }}">
+          Buy now
+          {{ if isset .Params "condition" }} ({{ .Params.condition }}){{ end }}
+        </a>
       </p>
     {{ end }}
 
