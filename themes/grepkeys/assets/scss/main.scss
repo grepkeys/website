@@ -126,11 +126,10 @@ header {
 // position underline. I decided to use this simpler approach despite it not
 // avoiding descenders to keep complexity to a minimum.
 //
-// The only links we want to have this formatting are in the main tag (i.e.
-// not the navigation)
+// The only links we want to have this formatting are in the main tag (i.e. not
+// the navigation)
 main a:any-link {
-  color: inherit;
-  text-decoration: none;
+  @include remove_link_formatting;
 
   background-image: linear-gradient(to right, $fg-color 100%, rgba(0,0,0,0) 0);
   background-size: 0.05em 0.05em;
@@ -142,6 +141,23 @@ main a:any-link {
 // distracting (like hover)
 main a:any-link:active {
   color: rgba($fg-color, 0.5)
+}
+
+// Mixin to clear link formatting
+@mixin remove_link_formatting {
+  // This removes the link formatting applied using the clever hack a little up
+  // the file. Although this mixin is used inside that section, the
+  // backgorund-image that the hack uses to work overrides this one.
+  background-image: none;
+
+  // As themes/grepkeys/assets/js/main.js adds a hack to fix link underlines on
+  // Android that uses text-decoration, we also want to clear that.
+  text-decoration: none;
+
+  // Although standard links do this, any links that are found outside the main
+  // tag still have the horrible default colours, so a removal of  link
+  // formatting still needs this.
+  color: inherit;
 }
 
 //
@@ -180,7 +196,7 @@ main a:any-link:active {
 // Remove the underlink links usually get (the overspecificity's purpose is to
 // override the link formatting's high specificity)
 .card .cardlink {
-  background-image: none;
+  @include remove_link_formatting;
 }
 
 // For pages where we want the cards to be in two columns
@@ -330,9 +346,11 @@ main img {
   line-height: 1.1;
 }
 
-// Reset default link styling
+// Reset default link styling and make foreground colour slightly transparent to
+// let lime background shine through faintly to increase the feeling of colours
+// 'fitting together'.
 .buybutton a {
-  text-decoration: none;
+  @include remove_link_formatting;
   color: rgba($fg-color, 0.8);
 }
 
