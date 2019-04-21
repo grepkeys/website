@@ -29,8 +29,12 @@
             {{ $path := (printf "img/%s.jpg" .File.BaseFileName) }}
             {{ if (fileExists (printf "/assets/%s" $path)) }}
               {{ $img := resources.Get $path }}
-              {{ with $img }}
-                <img src="{{ .Permalink }}">
+
+              <!-- Make card images lower res if we are in two-column layout -->
+              {{ if (in $smallcardpages .Section) }}
+                <img src='{{ ($img.Resize "256x").Permalink }}'>
+              {{ else }}
+                <img src='{{ ($img.Resize "512x").Permalink }}'>
               {{ end }}
             {{ end }}
 
