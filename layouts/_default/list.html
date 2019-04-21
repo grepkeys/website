@@ -17,7 +17,7 @@
       {{ range .Pages }}
         <div class="
           card
-          {{ if (in $smallcardpages .Section) }}
+          {{ if in $smallcardpages .Section }}
             smallcard
           {{ end }}
         ">
@@ -27,11 +27,11 @@
             <!-- is -->
             <!--   /assets/img/applewirelesskeyboard.md -->
             {{ $path := (printf "img/%s.jpg" .File.BaseFileName) }}
-            {{ if (fileExists (printf "/assets/%s" $path)) }}
+            {{ if fileExists (printf "/assets/%s" $path) }}
               {{ $img := resources.Get $path }}
 
               <!-- Make card images lower res if we are in two-column layout -->
-              {{ if (in $smallcardpages .Section) }}
+              {{ if in $smallcardpages .Section }}
                 <img src='{{ ($img.Resize "256x").Permalink }}'>
               {{ else }}
                 <img src='{{ ($img.Resize "512x").Permalink }}'>

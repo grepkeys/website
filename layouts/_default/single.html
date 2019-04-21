@@ -28,7 +28,7 @@
         <!-- is -->
         <!--   /assets/img/applewirelesskeyboard.md -->
         {{ $path := (printf "img/%s.jpg" .File.BaseFileName) }}
-        {{ if (fileExists (printf "/assets/%s" $path)) }}
+        {{ if fileExists (printf "/assets/%s" $path) }}
           {{ $img := resources.Get $path }}
           <!-- Resize images to be 1024 pixels wide -->
           {{ with $img }}
