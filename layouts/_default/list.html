@@ -10,8 +10,17 @@
     <header>{{ .Title }}</header>
 
     <main class="cards">
+      <!-- Slice of all the pages that are to use the smaller two-column -->
+      <!-- card format -->
+      {{ $smallcardpages := slice "switches" }}
+
       {{ range .Pages }}
-        <div class="card {{ if (eq .Section "switches") }}smallcard{{ end }}">
+        <div class="
+          card
+          {{ if (in $smallcardpages .Section) }}
+            smallcard
+          {{ end }}
+        ">
           <a class="cardlink" href="{{ .Permalink }}">
             <!-- Image format for e.g. -->
             <!--   /content/keyboards/applewirelesskeyboard.md -->
