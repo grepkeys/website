@@ -23,7 +23,17 @@
       <!-- Only show hero image if this is a switch or keyboard page (in -->
       <!-- contrast to e.g. the about page). -->
       {{ if or (eq .Section "keyboards") (eq .Section "switches") }}
-        <img class="listimg" src="/img/{{ .File.BaseFileName }}.jpg">
+        <!-- Image format for e.g. -->
+        <!--   /content/keyboards/applewirelesskeyboard.md -->
+        <!-- is -->
+        <!--   /assets/img/applewirelesskeyboard.md -->
+        {{ $path := (printf "img/%s.jpg" .File.BaseFileName) }}
+        {{ if (fileExists (printf "/assets/%s" $path)) }}
+          {{ $img := resources.Get $path }}
+          {{ with $img }}
+            <img src="{{ .Permalink }}">
+          {{ end }}
+        {{ end }}
       {{ end }}
 
       {{.Content}}
