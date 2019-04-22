@@ -118,11 +118,13 @@ h2 {
 
 // The title of the current page
 
-header {
+header span {
   font-family: $sansfontstack;
   font-size: 1.5rem;
-  margin-bottom: 1rem;
   letter-spacing: -0.01rem;
+}
+header {
+  margin-bottom: 1rem;
 }
 
 //
@@ -485,7 +487,7 @@ main img {
 .buybutton {
   float: right;
 }
-header {
+header span {
   display: inline;
 }
 
