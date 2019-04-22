@@ -484,8 +484,12 @@ main img {
 }
 
 // Slot in next to header
+//
+// The margin makes sure wrapping occurs a little before the text juts against
+// the button's edge
 .buybutton {
   float: right;
+  margin-left: 0.7rem;
 }
 header span {
   display: inline;
