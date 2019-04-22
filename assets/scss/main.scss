@@ -62,8 +62,10 @@ body {
 }
 
 // Space between paragraphs, but make sure not to add it for the very last
-// paragraph
-p + * {
+// paragraph. The selector is restricted to main because there are no actual
+// paragraphs of text that need separating outside it -- the space becomes only
+// a hindrance.
+main p + * {
   margin-top: 1em;
 }
 
