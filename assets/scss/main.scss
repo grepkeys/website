@@ -310,8 +310,8 @@ nav li a:hover {
 // Other elements
 //
 
-// Subtle copyright notice that switches to the optical weight ideal for the
-// smaller size, and dynamically adjusts the space above it for the screen size.
+// Subtle copyright notice that dynamically adjusts the space above it for the
+// screen size.
 //
 // We use flex to add half the viewport's height to the bottom of the page, and
 // then position the footer _inside_ this added space.
