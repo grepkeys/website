@@ -388,6 +388,14 @@ main img {
   box-shadow: 0 2px 8px rgba($fg-color, .3);
 }
 
+// Slot in next to header
+.buybutton {
+  float: right;
+}
+header {
+  display: inline;
+}
+
 // Selections
 
 ::selection {
