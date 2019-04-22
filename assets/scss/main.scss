@@ -405,6 +405,23 @@ nav li a:hover {
 .cherry-red   { background-color: #f7513a; }
 
 //
+// Images
+//
+
+// Make all images responsively fit the environment they are in
+main img {
+  width: 100%;
+}
+
+// Add an extremely subtle rounded border to hero images. Combined with some
+// extra space below it makes the hero image much more prominent.
+.heroimg {
+  margin-bottom: 1rem;
+  border: 1px solid rgba($fg-color, 0.02);
+  border-radius: 0.1rem;
+}
+
+//
 // Other elements
 //
 
@@ -443,11 +460,6 @@ abbr[title] {
 // Show a help cursor
 abbr[title] {
   cursor: help;
-}
-
-// Make all images fit the environment they are in
-main img {
-  width: 100%;
 }
 
 // 'Buy now' button
