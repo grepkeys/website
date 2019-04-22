@@ -4,3 +4,7 @@ title = "GrepKeys"
 
 [author]
   name = "GrepKeys"
+
+# Open external links in new tab
+[blackfriday]
+  hrefTargetBlank = true
