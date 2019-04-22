@@ -453,8 +453,10 @@ main img {
 .buybutton {
   display: inline-block;
   font-family: $sansfontstack;
-  border-radius: 0.25rem;
   padding: 0.5rem;
+
+  border: 1px solid rgba($fg-color, 0.1);
+  border-radius: 0.25rem;
 
   // Original line height makes padding uneven
   line-height: 1.1;
