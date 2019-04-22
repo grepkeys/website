@@ -322,6 +322,11 @@ nav li a:hover {
 // List of switches
 //
 
+// Add a little space below the entire switches section
+.switches {
+  margin-bottom: 1rem;
+}
+
 // Make heading above switches section more subtle as we want the user to focus
 // on the switches and the article, not an unimportant heading.
 .switches > p {
@@ -329,8 +334,6 @@ nav li a:hover {
   font-variant-caps: all-small-caps;
   color: rgba($fg-color, 0.4);
   letter-spacing: 0.02em;
-
-  margin-top: 1rem;
   margin-bottom: 0.2rem;
 }
 
