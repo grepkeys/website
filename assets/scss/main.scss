@@ -296,14 +296,19 @@ nav li a:hover {
   margin-top: 0.5rem;
 }
 
-// Add a slightly rounded green highlight upon hover to the links part of the
-// greeting on the homepage
+// Make the links on the homepage lime-green, removing their underline. Add a
+// slightly rounded green highlight upon hover.
 #greeting a {
+  @include remove_link_formatting;
+  color: $lime;
   border-radius: 0.1rem;
   transition: background-color 500ms cubic-bezier(0, 0, 0.33, 1);
 }
 #greeting a:hover {
   background-color: rgba($brightlime, 0.2);
+}
+#greeting a:active {
+  color: rgba($lime, 0.5);
 }
 
 //
