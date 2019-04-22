@@ -312,6 +312,98 @@ nav li a:hover {
 }
 
 //
+// List of switches
+//
+
+// Make heading above switches section more subtle as we want the user to focus
+// on the switches and the article, not an unimportant heading.
+.switches > p {
+  font-family: $sansfontstack;
+  font-variant-caps: all-small-caps;
+  color: rgba($fg-color, 0.4);
+  letter-spacing: 0.02em;
+
+  margin-top: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+// Make manufacturer label less prominent
+.manufacturer {
+  font-family: $sansfontstack;
+  font-size: 0.8rem;
+  font-variant-caps: all-small-caps;
+  color: rgba($fg-color, 0.4);
+  letter-spacing: 0.02em;
+
+  text-align: right;
+  float: right;
+  margin-left: 0.5rem;
+}
+
+// Style switches similarly to cards on list pages
+.switch {
+  display: inline-block;
+  padding: 0.2rem 0.4rem;
+  padding-top: 0.1rem;
+  margin-right: 0.25rem;
+  margin-bottom: 0.5rem;
+
+  border: 1px solid rgba($fg-color, 0.2);
+  border-radius: 0.25rem;
+  background-color: white;
+}
+
+// Shadow on hover just like cards
+.switch {
+  transition: box-shadow 300ms ease-out;
+}
+.switch:hover {
+  box-shadow: 0 2px 15px rgba($fg-color, .2);
+}
+
+// A small square of colour with a very subtle rounded border
+.switchcolourbox {
+  display: inline-block;
+  width: 0.7rem;
+  height: 0.7rem;
+  margin-right: 0.1rem;
+
+  border: 1px solid rgba($fg-color, 0.2);
+  border-radius: 0.1rem;
+}
+
+// Use a small sanserif font for each switch label
+.switch a {
+  @include remove_link_formatting;
+  font-family: $sansfontstack;
+  font-size: 0.7rem;
+}
+
+// Place switch label on the same line as the colour box
+//
+// We use inline-block because it allows us to move the label's position using
+// transform
+.switch p {
+  display: inline-block;
+}
+
+// Finesse positioning of colour box and label
+.switchcolourbox {
+  transform: translateY(0.05rem);
+}
+.switch p {
+  transform: translateY(-0.1rem);
+}
+
+// Colour box palette
+.cherry-black { background-color: #111111; }
+.cherry-blue  { background-color: #2a9cf9; }
+.cherry-brown { background-color: #7c441e; }
+.cherry-clear { background-color: #dddddd; }
+.cherry-green { background-color: #54d04b; }
+.cherry-red   { background-color: #f7513a; }
+
+//
 // Other elements
 //
 
