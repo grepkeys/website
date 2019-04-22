@@ -1,5 +1,6 @@
 ---
 title: "Cherry MX Red"
+short_name: "MX Red"
 ---
 
 The Cherry MX Red switch is a linear switch by the popular brand Cherry.
