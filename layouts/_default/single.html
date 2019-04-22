@@ -19,6 +19,42 @@
       </p>
     {{ end }}
 
+    <!-- A list of switches the keyboard is available with -->
+    {{ if isset .Params "switches" }}
+      <section class="switches">
+        <!-- Save these vars so that we can access them in ranges later -->
+        {{ $site := .Site }}
+        {{ $params := .Params }}
+
+        <p>Available with:</p>
+          {{ range .Params.switches }}
+            <section>
+              {{ $manufacturer := . }}
+
+              <!-- Group switches by manufacturer -->
+              <p class="manufacturer">{{ .name }}</p>
+
+              {{ range $manufacturer.switches }}
+                {{ $switch := . }}
+                <div class="switch"><a href="/switches/{{ $switch }}">
+                  <!-- Add class with switch name so that we can add switch- -->
+                  <!-- specific colours later -->
+                  <div class="switchcolourbox {{ $switch }}"></div>
+
+                  <!-- Get short version of switch name if it exists -->
+                  {{ $page := $site.GetPage (printf "/switches/%s" $switch) }}
+                  {{ if isset $page.Params "short_name" }}
+                    <p>{{ $page.Params.short_name }}</p>
+                  {{ else }}
+                    <p>{{ $page.Title }}</p>
+                  {{ end }}
+                </a></div>
+              {{ end }}
+            </section>
+          {{ end }}
+      </section>
+    {{ end }}
+
     <main>
       <!-- Only show hero image if this is a switch or keyboard page (in -->
       <!-- contrast to e.g. the about page). -->
