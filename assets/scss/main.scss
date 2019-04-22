@@ -366,7 +366,7 @@ nav li a:hover {
   display: inline-block;
   width: 0.7rem;
   height: 0.7rem;
-  margin-right: 0.1rem;
+  margin-right: 0.2rem;
 
   border: 1px solid rgba($fg-color, 0.2);
   border-radius: 0.1rem;
@@ -379,19 +379,10 @@ nav li a:hover {
   font-size: 0.7rem;
 }
 
-// Place switch label on the same line as the colour box
-//
-// We use inline-block because it allows us to move the label's position using
-// transform
+// Place switch label on the same line as the colour box and correct its
+// positioning
 .switch p {
   display: inline-block;
-}
-
-// Finesse positioning of colour box and label
-.switchcolourbox {
-  transform: translateY(0.05rem);
-}
-.switch p {
   transform: translateY(-0.1rem);
 }
 
