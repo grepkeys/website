@@ -58,6 +58,11 @@ body {
   font-family: $seriffontstack;
   font-size: 1rem;
   line-height: 1.5;
+}
+
+// Enable automatic hyphenation, but only for the main content of the page --
+// not for, e.g., navigation.
+main {
   hyphens: auto;
 }
 
