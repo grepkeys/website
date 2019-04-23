@@ -340,7 +340,7 @@ nav li a:hover {
   margin-left: 0.5rem;
 }
 
-// Style switches similarly to cards on list pages
+// Style switches like cards on list pages, but with a less bright background
 .switch {
   display: inline-block;
   padding: 0.2rem 0.4rem;
@@ -350,15 +350,24 @@ nav li a:hover {
 
   border: 1px solid rgba($fg-color, 0.2);
   border-radius: 0.25rem;
-  background-color: white;
+
+  // We use both opacity and background-color to make sure the colour boxes and
+  // text are also gently faded
+  opacity: 0.8;
+  background-color: rgba(white, 0.8);
 }
 
-// Shadow on hover just like cards
+// Shadow on hover just like cards, but with added background colour and opacity
+// transition
 .switch {
-  transition: box-shadow 300ms ease-out;
+  transition: box-shadow 300ms ease-out,
+    background-color 300ms ease-out,
+    opacity 300ms ease-out;
 }
 .switch:hover {
   box-shadow: 0 2px 15px rgba($fg-color, 0.2);
+  background-color: white;
+  opacity: 1;
 }
 
 // A small square of colour with a very subtle rounded border
