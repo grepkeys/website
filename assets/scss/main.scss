@@ -579,3 +579,10 @@ header span {
 ::selection {
   background: rgba($brightlime, 0.15);
 }
+
+// Scroll bar
+
+// Always show scroll bar (prevents centering from changing from page to page)
+html {
+  overflow-y: scroll;
+}
