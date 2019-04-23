@@ -154,8 +154,10 @@ header {
 @mixin remove_link_formatting {
   // This removes the link formatting applied using the clever hack a little
   // down the file. Although this mixin is used inside that section, the
-  // backgorund-image that the hack uses to work overrides this one.
+  // background-image and text-shadow that the hack uses to work overrides this
+  // one.
   background-image: none;
+  text-shadow: none;
 
   // As themes/grepkeys/assets/js/main.js adds a hack to fix link underlines on
   // Android that uses text-decoration, we also want to clear that.
@@ -168,8 +170,8 @@ header {
 }
 
 // Use a trick using a gradient to create a very basic, easy to control and
-// position underline. I decided to use this simpler approach despite it not
-// avoiding descenders to keep complexity to a minimum.
+// position underline. A text shadow with the same colour as the page background
+// allows avoiding descenders.
 //
 // The only links we want to have this formatting are in the main tag (i.e. not
 // the navigation)
@@ -181,6 +183,20 @@ $widthreduction: 0.05em;
 main a:any-link {
   @include remove_link_formatting;
 
+  text-shadow:
+    0.03em 0      $bg-color,
+   -0.03em 0      $bg-color,
+    0      0.03em $bg-color,
+    0     -0.03em $bg-color,
+    0.06em 0      $bg-color,
+   -0.06em 0      $bg-color,
+    0.09em 0      $bg-color,
+   -0.09em 0      $bg-color,
+    0.12em 0      $bg-color,
+   -0.12em 0      $bg-color,
+    0.15em 0      $bg-color,
+   -0.15em 0      $bg-color;
+
   background-image: linear-gradient(to right, $fg-color 0%, $fg-color 100%);
   background-size: calc(100% - #{$widthreduction} * 2) 0.05em;
   background-repeat: no-repeat;
@@ -191,6 +207,12 @@ main a:any-link {
 // distracting (like hover)
 main a:any-link:active {
   color: rgba($fg-color, 0.5);
+}
+
+// Remove descender avoidance on selection because it looks very strange to have
+// a white shadow around links.
+main a:any-link::selection {
+  text-shadow: none;
 }
 
 //
