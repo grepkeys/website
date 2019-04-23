@@ -466,6 +466,11 @@ main img {
   height: 0;
 }
 
+// Show a light grey box where images are supposed to load
+.imgwrapper {
+  background-color: rgba($fg-color, 0.05);
+}
+
 // Add an extremely subtle rounded border to hero images. Combined with some
 // extra space below it makes the hero image much more prominent.
 .heroimg {
