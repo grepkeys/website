@@ -156,8 +156,8 @@ header {
 main a:any-link {
   @include remove_link_formatting;
 
-  background-image: linear-gradient(to right, $fg-color 100%, rgba(0,0,0,0) 0);
   background-size: 0.05em 0.05em;
+  background-image: linear-gradient(to right, $fg-color 0%, $fg-color 100%);
   background-repeat: repeat-x;
   background-position: 0 88%;
 }
