@@ -166,24 +166,15 @@ main a:any-link {
 // Fade link text upon click to make website feel more interactive without being
 // distracting (like hover)
 main a:any-link:active {
-  color: rgba($fg-color, 0.5)
+  color: rgba($fg-color, 0.5);
 }
 
-// Mixin to clear link formatting
-@mixin remove_link_formatting {
-  // This removes the link formatting applied using the clever hack a little up
-  // the file. Although this mixin is used inside that section, the
-  // backgorund-image that the hack uses to work overrides this one.
-  background-image: none;
-
-  // As themes/grepkeys/assets/js/main.js adds a hack to fix link underlines on
-  // Android that uses text-decoration, we also want to clear that.
-  text-decoration: none;
-
-  // Although standard links do this, any links that are found outside the main
-  // tag still have the horrible default colours, so a removal of  link
-  // formatting still needs this.
-  color: inherit;
+// Make link underline slightly thicker upon hover
+main a:any-link {
+  transition: background-size 150ms ease-out;
+}
+main a:any-link:hover {
+  background-size: 0.07em 0.07em;
 }
 
 //
