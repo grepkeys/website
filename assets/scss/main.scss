@@ -62,12 +62,8 @@ $sysfontstack:
   "Segoe UI Emoji",
   "Segoe UI Symbol";
 
-$sansfontstack: ff-scala-sans-pro, $sysfontstack;
-
-// We fall back to sans fonts because, if you have such a slow internet
-// connection that this font is not loaded, you probably also have a low
-// resolution screen that would be better off with sanserif anyway.
-$seriffontstack: ff-scala, $sansfontstack;
+$seriffontstack: ff-scala, $sysfontstack;
+$sansfontstack: ff-scala-sans-pro, $seriffontstack;
 
 // Colours
 
