@@ -79,9 +79,13 @@
           <!-- image that has a fixed aspect ratio the same as the -->
           <!-- image. This means that the layout doesn't jump around as  -->
           <!-- images load -->
+          <!-- -->
+          <!-- The - 0.2 removes some small amount that for some reason the -->
+          <!-- browser adds -- without it the wrapper is too tall. I also -->
+          <!-- don't know why. -->
           <div
             class="imgwrapper heroimg"
-            style="padding-top: {{ mul $imgaspect 100 }}%"
+            style="padding-top: {{ sub (mul $imgaspect 100) 0.2 }}%"
           >
             <!-- Resize images to be 1024 pixels wide -->
             {{ with $img }}
