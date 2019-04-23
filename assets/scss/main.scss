@@ -70,7 +70,7 @@ main {
 // paragraphs of text that need separating outside it -- the space becomes only
 // a hindrance.
 main p + * {
-  margin-top: 1em;
+  margin-top: 0.75em;
 }
 
 // Lower contrast by making the text dark grey and the background light grey
