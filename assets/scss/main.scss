@@ -173,13 +173,18 @@ header {
 //
 // The only links we want to have this formatting are in the main tag (i.e. not
 // the navigation)
+//
+// We also make the underline 0.05em shorter either side. This helps minimise
+// small bits of underline sticking out from descenders at the beginning or end
+// of a link.
+$widthreduction: 0.05em;
 main a:any-link {
   @include remove_link_formatting;
 
   background-image: linear-gradient(to right, $fg-color 0%, $fg-color 100%);
-  background-size: 0.05em 0.05em;
-  background-repeat: repeat-x;
-  background-position: 0 88%;
+  background-size: calc(100% - #{$widthreduction} * 2) 0.05em;
+  background-repeat: no-repeat;
+  background-position: $widthreduction 88%;
 }
 
 // Fade link text upon click to make website feel more interactive without being
