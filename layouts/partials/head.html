@@ -8,11 +8,3 @@
       href="{{ $styles.Permalink }}"
       integrity="{{ $styles.Data.Integrity }}"
       media="screen">
-
-{{ $js := resources.Get "js/main.js" | resources.Minify | fingerprint }}
-
-<script type="text/javascript"
-        src="{{ $js.Permalink }}"
-        integrity="{{ $js.Data.Integrity }}"
-        media="screen">
-</script>
