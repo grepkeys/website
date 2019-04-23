@@ -168,14 +168,6 @@ main a:any-link:active {
   color: rgba($fg-color, 0.5);
 }
 
-// Make link underline slightly thicker upon hover
-main a:any-link {
-  transition: background-size 150ms ease-out;
-}
-main a:any-link:hover {
-  background-size: 0.07em 0.07em;
-}
-
 //
 // Card list
 //
