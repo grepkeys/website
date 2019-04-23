@@ -244,6 +244,14 @@ nav li a:hover {
   color: $fg-color;
 }
 
+// Nudge each nav bar item up slightly upon hover
+nav li {
+  transition: transform 250ms ease-out;
+}
+nav li:hover {
+  transform: translateY(-0.1rem);
+}
+
 // Make the link to the website's homepage more prominent than the other nav
 // bar's links by not fading it, making it green upon hover
 #navtitle {
