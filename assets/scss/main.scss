@@ -52,7 +52,6 @@ $bg-color:   #eff3f3;
 // ---
 $lime:       #01a97c;
 $brightlime: #0cf28f;
-$grey:       #777777;
 
 body {
   font-family: $seriffontstack;
@@ -245,7 +244,7 @@ nav li {
 
 // Fade nav bar items, but make them fully coloured on hover
 nav li a {
-  color: $grey;
+  color: rgba($fg-color, 0.5);
   text-decoration: none;
   transition: color 250ms ease-out;
 }
