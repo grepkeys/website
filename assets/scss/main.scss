@@ -245,10 +245,9 @@ nav li a:hover {
 }
 
 // Make the link to the website's homepage more prominent than the other nav
-// bar's links by making it bold, unfaded and become green upon hover
+// bar's links by not fading it, making it green upon hover
 #navtitle {
   color: $fg-color;
-  font-weight: bold;
 }
 #navtitle:hover {
   color: $lime;
