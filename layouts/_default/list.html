@@ -30,12 +30,27 @@
             {{ if fileExists (printf "/assets/%s" $path) }}
               {{ $img := resources.Get $path }}
 
-              <!-- Make card images lower res if we are in two-column layout -->
-              {{ if in $smallcardpages .Section }}
-                <img src='{{ ($img.Resize "256x").Permalink }}'>
-              {{ else }}
-                <img src='{{ ($img.Resize "512x").Permalink }}'>
-              {{ end }}
+              <!-- Use imageConfig function to extract aspect ratio of -->
+              <!-- original image -->
+              {{ $imgdata := imageConfig (printf "/assets/%s" $path) }}
+              {{ $imgaspect := div (float $imgdata.Height) $imgdata.Width }}
+
+              <!-- Use padding-top hack to create a wrapper div around each -->
+              <!-- image that has a fixed aspect ratio the same as the -->
+              <!-- image. This means that the layout doesn't jump around as  -->
+              <!-- images load -->
+              <div
+                class="imgwrapper"
+                style="padding-top: {{ mul $imgaspect 100 }}%"
+              >
+                <!-- Make card images lower res if we are in two-column -->
+                <!-- layout -->
+                {{ if in $smallcardpages .Section }}
+                  <img src='{{ ($img.Resize "256x").Permalink }}'>
+                {{ else }}
+                  <img src='{{ ($img.Resize "512x").Permalink }}'>
+                {{ end }}
+              </div>
             {{ end }}
 
             <p class="cardtitle">{{ .Title }}</p>

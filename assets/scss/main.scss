@@ -453,6 +453,17 @@ nav li:hover {
 // Make all images responsively fit the environment they are in
 main img {
   width: 100%;
+  height: auto;
+}
+
+// Some setup needed for the fixed aspect ratio image wrapper to work
+main img {
+  position: absolute;
+  top: 0;
+}
+.imgwrapper {
+  position: relative;
+  height: 0;
 }
 
 // Add an extremely subtle rounded border to hero images. Combined with some

@@ -69,10 +69,25 @@
         {{ $path := (printf "img/%s.jpg" .File.BaseFileName) }}
         {{ if fileExists (printf "/assets/%s" $path) }}
           {{ $img := resources.Get $path }}
-          <!-- Resize images to be 1024 pixels wide -->
-          {{ with $img }}
-            <img class="heroimg" src="{{ (.Resize "1024x").Permalink }}">
-          {{ end }}
+
+          <!-- Use imageConfig function to extract aspect ratio of -->
+          <!-- original image -->
+          {{ $imgdata := imageConfig (printf "/assets/%s" $path) }}
+          {{ $imgaspect := div (float $imgdata.Height) $imgdata.Width }}
+
+          <!-- Use padding-top hack to create a wrapper div around each -->
+          <!-- image that has a fixed aspect ratio the same as the -->
+          <!-- image. This means that the layout doesn't jump around as  -->
+          <!-- images load -->
+          <div
+            class="imgwrapper heroimg"
+            style="padding-top: {{ mul $imgaspect 100 }}%"
+          >
+            <!-- Resize images to be 1024 pixels wide -->
+            {{ with $img }}
+              <img src="{{ (.Resize "1024x").Permalink }}">
+            {{ end }}
+          </div>
         {{ end }}
       {{ end }}
 
