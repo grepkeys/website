@@ -181,23 +181,19 @@ main a:any-link {
   @include remove_link_formatting;
 
   text-shadow:
-    0.03em 0      $bg-color,
-   -0.03em 0      $bg-color,
-    0      0.03em $bg-color,
-    0     -0.03em $bg-color,
-    0.06em 0      $bg-color,
-   -0.06em 0      $bg-color,
-    0.09em 0      $bg-color,
-   -0.09em 0      $bg-color,
-    0.12em 0      $bg-color,
-   -0.12em 0      $bg-color,
-    0.15em 0      $bg-color,
-   -0.15em 0      $bg-color;
+     -1px   -1px 0 $bg-color,
+      1px   -1px 0 $bg-color,
+     -1px    1px 0 $bg-color,
+      1px    1px 0 $bg-color,
+   -1.5px -1.5px 0 $bg-color,
+    1.5px -1.5px 0 $bg-color,
+   -1.5px  1.5px 0 $bg-color,
+    1.5px  1.5px 0 $bg-color;
 
   background-image: linear-gradient(to right, $fg-color 0%, $fg-color 100%);
   background-size: calc(100% - #{$widthreduction} * 2) 0.05em;
   background-repeat: no-repeat;
-  background-position: $widthreduction 88%;
+  background-position: $widthreduction 92%;
 }
 
 // Fade link text upon click to make website feel more interactive without being
