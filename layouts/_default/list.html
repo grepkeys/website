@@ -47,13 +47,17 @@
                 class="imgwrapper"
                 style="padding-top: {{ sub (mul $imgaspect 100) 0.2 }}%"
               >
+
                 <!-- Make card images lower res if we are in two-column -->
                 <!-- layout -->
-                {{ if in $smallcardpages .Section }}
-                  <img src='{{ ($img.Resize "256x").Permalink }}'>
-                {{ else }}
-                  <img src='{{ ($img.Resize "512x").Permalink }}'>
-                {{ end }}
+                <img
+                  alt="{{ .Title }}"
+                  {{ if in $smallcardpages .Section }}
+                    src='{{ ($img.Resize "256x").Permalink }}'
+                  {{ else }}
+                    src='{{ ($img.Resize "512x").Permalink }}'
+                  {{ end }}
+                >
               </div>
             {{ end }}
 

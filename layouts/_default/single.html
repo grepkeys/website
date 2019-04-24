@@ -58,6 +58,8 @@
       </section>
     {{ end }}
 
+    {{ $title := .Title }}
+
     <main>
       <!-- Only show hero image if this is a switch or keyboard page (in -->
       <!-- contrast to e.g. the about page). -->
@@ -89,7 +91,7 @@
           >
             <!-- Resize images to be 1024 pixels wide -->
             {{ with $img }}
-              <img src="{{ (.Resize "1024x").Permalink }}">
+              <img alt="{{ $title }}" src="{{ (.Resize "1024x").Permalink }}">
             {{ end }}
           </div>
         {{ end }}
