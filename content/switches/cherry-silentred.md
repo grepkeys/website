@@ -1,5 +1,5 @@
 ---
-title: Cherry MX Silent Red
+title: "Cherry MX Silent Red"
 short_name: "MX Silent Red"
 ---
 
