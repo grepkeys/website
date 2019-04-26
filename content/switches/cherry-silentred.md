@@ -1,5 +1,6 @@
 ---
 title: Cherry MX Silent Red
+short_name: "MX Silent Red"
 ---
 
 The Cherry MX Silent Red is a switch that was developed by Cherry with the help from Corsair; a popular "gaming" keyboard brand. The silent reds were designed to feel and function identically to the Cherry MX Reds but quiter. The reason for developing this switch instead of just using O-rings (small rubber bands placed onto the bottom of a keycap to dampen sound) was that the O-rings would possibly block the RGB lights. Just like the other red switch, the silent reds have an actuation force of 45g and are completely linear.
