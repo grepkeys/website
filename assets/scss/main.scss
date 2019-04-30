@@ -9,24 +9,23 @@
 // Layout
 //
 
-// Set a nice, large font size
 html { font-size: 21px }
 
-// Smaller font size in mobile
+// Smaller font size on mobile devices
 @media all and (max-width: 560px) {
   html { font-size: 19px }
 }
 
-// Fix up spacing and padding
+// Zero default spacing and padding to get a fresh start
 * {
   margin: 0;
   padding: 0;
 }
 
 body {
-  padding: 1rem;     // A little padding on all sides
-  max-width: 30rem;  // Keep the container from getting overly wide
-  margin-left: auto; // Make margins even
+  padding: 1rem;     // A little padding on all sides of the textblock
+  max-width: 30rem;  // Prevent line length from getting wider than 30rem
+  margin-left: auto; // Keep textblock centered on the page
   margin-right: auto;
 }
 
@@ -86,7 +85,7 @@ main p + * {
   margin-top: 0.75em;
 }
 
-// Lower contrast by making the text dark grey and the background light grey
+// Apply previously-defined base colours
 body {
   color: $fg-color;
   background-color: $bg-color;
@@ -97,7 +96,8 @@ html {
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
-// A bunch of OpenType features
+// Always use all basic font features, plus proportional text figures to make
+// numbers blend into the text
 body {
   font-variant-ligatures: common-ligatures contextual;
   font-variant-numeric: oldstyle-nums proportional-nums;
@@ -111,6 +111,8 @@ body {
 // Basic headings used only for structure and hierarchy within a page's main
 // content
 
+// Similar styles to The Elements of Typographic Style -- letterspaced all small
+// caps for heading 1, and italic for heading 2
 h1 {
   font-size: 1rem;
   font-weight: inherit;
@@ -133,8 +135,14 @@ h2 {
 header span {
   font-family: $sansfontstack;
   font-size: 1.5rem;
+
+  // As the fonts we use do not have optical sizes, we compensate as best as we
+  // can by slightly reducing letter spacing
   letter-spacing: -0.01rem;
 }
+
+// Add some space below the title that reduces very quicly when the viewport's
+// height is reduced
 header {
   margin-bottom: calc(0.5rem + 5vh);
 }
@@ -189,8 +197,8 @@ main a:any-link {
   background-position: $widthreduction 92%;
 }
 
-// Fade link text upon click to make website feel more interactive without being
-// distracting (like hover)
+// Fade link text upon click to make website feel more interactive, without
+// being distracting (like hover)
 main a:any-link:active {
   color: rgba($fg-color, 0.5);
 }
@@ -229,7 +237,7 @@ main a:any-link::selection {
   box-shadow: 0 2px 15px rgba($fg-color, .2);
 }
 
-// Slightly larger font for the title of each card
+// Slightly larger (than body text) font for the title of each card
 .cardtitle {
   font-size: 1.1rem;
 }
@@ -251,8 +259,9 @@ main a:any-link::selection {
 // Nav bar
 //
 
-// Make nav bar sans serif to offset it from the body of the website and add a
-// large amount of space below it that reduces quickly on viewport resize.
+// Make nav bar sans serif to offset it from the body of the website
+//
+// Add a large amount of space below it that reduces quickly on viewport resize
 nav {
   font-family: $sansfontstack;
   margin-bottom: calc(0.5rem + 10vh);
@@ -320,7 +329,7 @@ nav li:hover {
   font-size: 1.5rem;
 }
 
-// Reduce space between 'Hi!' and rest of greeting
+// Reduce space between 'Hi' and rest of greeting
 #bighi + p {
   margin-top: 0.5rem;
 }
@@ -402,7 +411,7 @@ nav li:hover {
   opacity: 1;
 }
 
-// A small square of colour with a very subtle rounded border
+// A small square of colour with a very subtle rounded border before each label
 .switchcolourbox {
   display: inline-block;
   width: 0.7rem;
@@ -413,7 +422,7 @@ nav li:hover {
   border-radius: 0.1rem;
 }
 
-// Use a small sanserif font for each switch label
+// Use a small sanserif font for switch labels
 .switch a {
   @include remove_link_formatting;
   font-family: $sansfontstack;
@@ -477,10 +486,9 @@ main img {
 // screen size.
 //
 // We use flex to add one third of the viewport's height to the bottom of the
-// page, and then position the footer _inside_ this added space.
-//
-// We also remove the margin usually added to the bottom of the page, instead
-// moving the footer up into the third-viewport space.
+// page, and then position the footer _inside_ this added space. We also remove
+// the margin usually added to the bottom of the page, instead moving the footer
+// up into the third-viewport space.
 //
 // The shadow and letterspacing are used to simulate optical sizes
 footer {
@@ -516,7 +524,6 @@ abbr[title] {
 
 // 'Buy now' button
 
-// Base
 .buybutton {
   display: inline-block;
   font-family: $sansfontstack;
@@ -530,8 +537,8 @@ abbr[title] {
 }
 
 // Reset default link styling and make foreground colour slightly transparent to
-// let lime background shine through faintly to increase the feeling of colours
-// 'fitting together'.
+// let lime background shine through faintly, making the entire colour scheme
+// feel more coherent.
 .buybutton a {
   @include remove_link_formatting;
   color: rgba($fg-color, 0.8);
