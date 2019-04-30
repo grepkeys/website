@@ -13,15 +13,8 @@
 html { font-size: 21px }
 
 // Smaller font size in mobile
-$mobilebreakpoint: 480px;
-@media all and (max-width:$mobilebreakpoint) {
-  html { font-size: 18px }
-}
-
-// Even larger font size for full screen desktop usage
-$fullscreenbreakpoint: 1700px;
-@media all and (min-width:$fullscreenbreakpoint) {
-  html { font-size: 24px }
+@media all and (max-width: 560px) {
+  html { font-size: 19px }
 }
 
 // Fix up spacing and padding
