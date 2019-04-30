@@ -9,4 +9,4 @@ So, after all this blurb, it might be time to introduce ourselves. [twdly](https
 
 Contrary to what you (hopefully) might think, GrepKeys was made as a school project for our software class. We would like to thank the creators of the tools we used to make this website, which are: [Hugo](https://gohugo.io/) (a static site generator), [Git](https://git-scm.com)([Hub](https://github.com)) for version control and collaboration respectively. twdly uses [Sublime Text](https://www.sublimetext.com/), and arzg uses [NeoVim](https://neovim.io/) – you can find his configuration [here](https://github.com/arzg/dotfiles).  Lastly, but perhaps most importantly, we use the Unix Shell to glue all these tools together. [Here](https://github.com/grepkeys/website/blob/master/deploy.s://github.com/grepkeys/website/blob/master/deploy.sh) is an example of it in action.
 
-Finally, make sure you remember that *the red switch is linear* (it's an inside joke – don't worry about it).
+Finally, make sure you remember that *the red switch is linear* (it's an inside joke -- don't worry about it).
