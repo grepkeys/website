@@ -136,7 +136,7 @@ header span {
   letter-spacing: -0.01rem;
 }
 header {
-  margin-bottom: 1rem;
+  margin-bottom: calc(0.5rem + 5vh);
 }
 
 //
@@ -252,10 +252,10 @@ main a:any-link::selection {
 //
 
 // Make nav bar sans serif to offset it from the body of the website and add a
-// little space below.
+// large amount of space below it that reduces quickly on viewport resize.
 nav {
   font-family: $sansfontstack;
-  margin-bottom: 1rem;
+  margin-bottom: calc(0.5rem + 10vh);
 }
 
 // Collapse nav bar list items into one line
