@@ -22,11 +22,20 @@ html { font-size: 21px }
   padding: 0;
 }
 
-body {
-  padding: 1rem;     // A little padding on all sides of the textblock
-  max-width: 30rem;  // Prevent line length from getting wider than 30rem
-  margin-left: auto; // Keep textblock centered on the page
+// We put the code to position the textblock into a mixin because it is reused
+// later
+@mixin textblock-positioning() {
+  // A little padding on the left and right of the textblock to prevent it from
+  // being flush against the sides of the display on mobile
+  padding: 0rem 1rem;
+
+  max-width: 30rem;
+  margin-left: auto;
   margin-right: auto;
+}
+
+body {
+  @include textblock-positioning();
 }
 
 //
@@ -261,9 +270,30 @@ main a:any-link::selection {
 // Nav bar
 //
 
+// Make sure nav bar always stays in one place -- at the top of the screen.
+// Offset it from the main content through a white background and a very light
+// shadow.
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+
+  background-color: white;
+  padding: 0.5rem 0;
+  box-shadow: 0 2px 10px rgba($fg-color, .05);
+}
+
 // Make nav bar sans serif to offset it from the body of the website
 nav {
   font-family: $sansfontstack;
+}
+
+// Reuse textblock's code to make labels in nav bar align and resize in sync
+// with textblock
+nav ul {
+  @include textblock-positioning();
 }
 
 // Collapse nav bar list items into one line
