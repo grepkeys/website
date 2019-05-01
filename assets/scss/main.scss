@@ -141,9 +141,11 @@ header span {
   letter-spacing: -0.01rem;
 }
 
-// Add some space below the title that reduces very quicly when the viewport's
-// height is reduced
+// Add some space above and below to make the page less cramped and to emphasise
+// the title more. This space reduces very quicly when the viewport's height is
+// reduced.
 header {
+  margin-top: calc(2.5rem + 10vh);
   margin-bottom: calc(0.5rem + 5vh);
 }
 
@@ -260,11 +262,8 @@ main a:any-link::selection {
 //
 
 // Make nav bar sans serif to offset it from the body of the website
-//
-// Add a large amount of space below it that reduces quickly on viewport resize
 nav {
   font-family: $sansfontstack;
-  margin-bottom: calc(0.5rem + 10vh);
 }
 
 // Collapse nav bar list items into one line
