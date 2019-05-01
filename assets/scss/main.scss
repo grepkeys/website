@@ -283,6 +283,12 @@ nav {
   background-color: white;
   padding: 0.5rem 0;
   box-shadow: 0 2px 10px rgba($fg-color, .05);
+
+  // Transition to make autohide (from assets/js/main.js) animate smoothly
+  //
+  // To see why box-shadow is animated take a look at the afore-mentioned
+  // JavaScript file.
+  transition: top 200ms ease-out, box-shadow 300ms ease-out;
 }
 
 // Make nav bar sans serif to offset it from the body of the website
