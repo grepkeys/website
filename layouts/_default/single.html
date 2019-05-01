@@ -7,20 +7,20 @@
   <body>
     {{ partial "nav" . }}
 
-    <!-- 'Buy now' button that shows the condition of the product being sold -->
-    <!-- at the button's link (e.g. refurbished) -->
-    <!-- -->
-    <!-- We put this before the header to get correct wrapping -->
-    {{ if isset .Params "purchase_link" }}
-      <p class="buybutton">
-        <a href="{{ .Params.purchase_link }}" target="_blank">
-          Buy now
-          {{ if isset .Params "condition" }} ({{ .Params.condition }}){{ end }}
-        </a>
-      </p>
-    {{ end }}
+    <header>
+      <!-- 'Buy now' button that shows the condition of the product being sold -->
+      <!-- at the button's link (e.g. refurbished) -->
+      {{ if isset .Params "purchase_link" }}
+        <p class="buybutton">
+          <a href="{{ .Params.purchase_link }}" target="_blank">
+            Buy now
+            {{ if isset .Params "condition" }} ({{ .Params.condition }}){{ end }}
+          </a>
+        </p>
+      {{ end }}
 
-    <header><span>{{ .Title }}</span></header>
+      <span>{{ .Title }}</span>
+    </header>
 
     <!-- A list of switches the keyboard is available with -->
     {{ if isset .Params "switches" }}
