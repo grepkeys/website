@@ -312,7 +312,7 @@ nav li:hover {
 // We use padding because we don't want the top of the homepage to be cut off
 // (negative values are not possible for padding)
 .home main {
-  padding-top: calc(50vh - 10rem);
+  padding-top: 35vh;
 }
 
 // Increase font size of greeting on homepage to counteract large amount of
