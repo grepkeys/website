@@ -193,14 +193,14 @@ main a:any-link {
   @include remove_link_formatting;
 
   text-shadow:
-     -1px   -1px 0 $bg-color,
-      1px   -1px 0 $bg-color,
-     -1px    1px 0 $bg-color,
-      1px    1px 0 $bg-color,
-   -1.5px -1.5px 0 $bg-color,
-    1.5px -1.5px 0 $bg-color,
-   -1.5px  1.5px 0 $bg-color,
-    1.5px  1.5px 0 $bg-color;
+   -1px -1px 0 $bg-color,
+    1px -1px 0 $bg-color,
+   -1px  1px 0 $bg-color,
+    1px  1px 0 $bg-color,
+   -2px    0 0 $bg-color,
+    2px    0 0 $bg-color,
+   -2px    0 0 $bg-color,
+    2px    0 0 $bg-color;
 
   background-image: linear-gradient(to right, $fg-color 0%, $fg-color 100%);
   background-size: calc(100% - #{$widthreduction} * 2) 0.05em;
