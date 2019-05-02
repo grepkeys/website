@@ -243,12 +243,23 @@ main a:any-link::selection {
 // Add a light shadow to each card, which expands upon hover. The card also
 // moves up an amount that counteracts the expansion of the shadow exactly on
 // hover.
-.card {
+//
+// We reuse these shadows later, so we put them into mixins.
+
+@mixin light-shadow() {
   box-shadow: 0 1px 4px rgba($fg-color, .08);
+}
+
+@mixin strong-shadow() {
+  box-shadow: 0 4px 9px rgba($fg-color, .1);
+}
+
+.card {
+  @include light-shadow();
   transition: box-shadow 300ms ease-out, transform 300ms ease-out;
 }
 .card:hover {
-  box-shadow: 0 4px 9px rgba($fg-color, .1);
+  @include strong-shadow();
   transform: translateY(-3px);
 }
 
@@ -437,16 +448,16 @@ nav li:hover {
   background-color: rgba(white, 0.8);
 }
 
-// Shadow similar in style to cards, but with added background colour and
-// opacity transition
+// Shadow from list cards, but with added background colour and opacity
+// transition
 .switch {
-  box-shadow: 0 1px 4px rgba($fg-color, .08);
+  @include light-shadow();
   transition: box-shadow 300ms ease-out,
     background-color 300ms ease-out,
     opacity 300ms ease-out;
 }
 .switch:hover {
-  box-shadow: 0 4px 9px rgba($fg-color, .1);
+  @include strong-shadow();
   background-color: white;
   opacity: 1;
 }
