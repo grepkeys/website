@@ -587,27 +587,20 @@ abbr[title] {
   line-height: 1.1;
 }
 
-// Reset default link styling and make foreground colour slightly transparent to
-// let lime background shine through faintly, making the entire colour scheme
-// feel more coherent.
+// Reset default link styling
 .buybutton a {
   @include remove_link_formatting;
-  color: rgba($fg-color, 0.8);
 }
 
-// Shadow and lime-green background colour react to hover and click
+// Shadow and background tinted lime-green react to hover
 .buybutton {
-  background-color: rgba($brightlime, 0.3);
-  box-shadow: 0 3px 8px rgba($fg-color, .1);
+  background-color: rgba($brightlime, 0.1);
+  @include light-shadow();
   transition: background-color 250ms ease-out, box-shadow 250ms ease-out;
 }
 .buybutton:hover {
   background-color: rgba($brightlime, 0.25);
-  box-shadow: 0 4px 15px rgba($fg-color, .18);
-}
-.buybutton:active {
-  background-color: rgba($brightlime, 0.35);
-  box-shadow: 0 2px 8px rgba($fg-color, .3);
+  @include strong-shadow();
 }
 
 // Slot in next to header
