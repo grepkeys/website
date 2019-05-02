@@ -203,7 +203,7 @@ main a:any-link {
     2px    0 0 $bg-color;
 
   background-image: linear-gradient(to right, $fg-color 0%, $fg-color 100%);
-  background-size: calc(100% - #{$widthreduction} * 2) 0.05em;
+  background-size: calc(100% - #{$widthreduction} * 2) 1px;
   background-repeat: no-repeat;
   background-position: $widthreduction 92%;
 }
@@ -236,7 +236,7 @@ main a:any-link::selection {
   margin-bottom: 1rem;
 
   border: 1px solid rgba($fg-color, 0.2);
-  border-radius: 0.1rem;
+  border-radius: 4px;
   background-color: white;
 }
 
@@ -326,7 +326,7 @@ nav li {
   transition: transform 250ms ease-out;
 }
 nav li:hover {
-  transform: translateY(-0.05rem);
+  transform: translateY(-2px);
 }
 
 // Make the link to the website's homepage more prominent than the other nav
@@ -374,7 +374,7 @@ nav li:hover {
 #greeting a {
   @include remove_link_formatting;
   color: $lime;
-  border-radius: 0.1rem;
+  border-radius: 3px;
   transition: background-color 500ms cubic-bezier(0, 0, 0.33, 1);
 }
 #greeting a:hover {
@@ -425,7 +425,7 @@ nav li:hover {
   margin-bottom: 0.5rem;
 
   border: 1px solid rgba($fg-color, 0.2);
-  border-radius: 0.25rem;
+  border-radius: 3px;
 
   // We use both opacity and background-color to make sure the colour boxes and
   // text are also gently faded
@@ -454,7 +454,7 @@ nav li:hover {
   margin-right: 0.2rem;
 
   border: 1px solid rgba($fg-color, 0.2);
-  border-radius: 0.1rem;
+  border-radius: 3px;
 }
 
 // Use a small sanserif font for switch labels
@@ -510,7 +510,7 @@ main img {
 .heroimg {
   margin-bottom: 1rem;
   border: 1px solid rgba($fg-color, 0.02);
-  border-radius: 0.1rem;
+  border-radius: 3px;
 }
 
 //
@@ -565,7 +565,7 @@ abbr[title] {
   padding: 0.5rem;
 
   border: 1px solid rgba($fg-color, 0.1);
-  border-radius: 0.25rem;
+  border-radius: 3px;
 
   // Original line height makes padding uneven
   line-height: 1.1;
