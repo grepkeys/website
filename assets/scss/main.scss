@@ -428,7 +428,7 @@ nav li:hover {
   margin-right: 0.25rem;
   margin-bottom: 0.5rem;
 
-  border: 1px solid rgba($fg-color, 0.2);
+  border: 1px solid rgba($fg-color, 0.1);
   border-radius: 3px;
 
   // We use both opacity and background-color to make sure the colour boxes and
@@ -437,15 +437,16 @@ nav li:hover {
   background-color: rgba(white, 0.8);
 }
 
-// Shadow on hover just like cards, but with added background colour and opacity
-// transition
+// Shadow similar in style to cards, but with added background colour and
+// opacity transition
 .switch {
+  box-shadow: 0 1px 4px rgba($fg-color, .08);
   transition: box-shadow 300ms ease-out,
     background-color 300ms ease-out,
     opacity 300ms ease-out;
 }
 .switch:hover {
-  box-shadow: 0 2px 15px rgba($fg-color, 0.2);
+  box-shadow: 0 4px 9px rgba($fg-color, .1);
   background-color: white;
   opacity: 1;
 }
