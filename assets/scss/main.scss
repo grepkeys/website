@@ -240,12 +240,16 @@ main a:any-link::selection {
   background-color: white;
 }
 
-// Add a shadow to each card upon hover
+// Add a light shadow to each card, which expands upon hover. The card also
+// moves up an amount that counteracts the expansion of the shadow exactly on
+// hover.
 .card {
-  transition: box-shadow 300ms ease-out;
+  box-shadow: 0 1px 4px rgba($fg-color, .08);
+  transition: box-shadow 300ms ease-out, transform 300ms ease-out;
 }
 .card:hover {
-  box-shadow: 0 2px 15px rgba($fg-color, .2);
+  box-shadow: 0 4px 9px rgba($fg-color, .1);
+  transform: translateY(-3px);
 }
 
 // Slightly larger (than body text) font for the title of each card
