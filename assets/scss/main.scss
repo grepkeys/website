@@ -224,17 +224,22 @@ main a:any-link::selection {
 // Card list
 //
 
+// Use CSS Grid to align cards
+//
+// Normal card pages only have one column, so the only reason we keep CSS Grid
+// there is to neatly handle the gaps between items. On pages that require
+// smaller cards we simply change the number of columns from one to two.
 .cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 1rem;
+}
+.smallcards {
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .card {
-  flex: 0 1 100%;
   padding: 0.75rem;
-  margin-bottom: 1rem;
-
   border: 1px solid rgba($fg-color, 0.1);
   border-radius: 4px;
   background-color: white;
@@ -272,13 +277,6 @@ main a:any-link::selection {
 // override the link formatting's high specificity)
 .card .cardlink {
   @include remove_link_formatting;
-}
-
-// For pages where we want the cards to be in two columns
-//
-// The - 0.5rem removes the width that is used for a margin between each card
-.smallcard {
-  flex: 0 1 calc(50% - 0.5rem);
 }
 
 //
