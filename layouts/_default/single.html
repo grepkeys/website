@@ -8,14 +8,15 @@
     {{ partial "nav" . }}
 
     <header>
-      <!-- 'Buy now' button that shows the condition of the product being sold -->
-      <!-- at the button's link (e.g. refurbished) -->
+      <!-- 'Buy now' button that links to a page to purchase the article's
+      <!-- product. If applicable, it links to a footnote describing the -->
+      <!-- linked product's condition. -->
       {{ if isset .Params "purchase_link" }}
         <p class="buybutton">
           <a href="{{ .Params.purchase_link }}" target="_blank">
             Buy now
-            {{ if isset .Params "condition" }} ({{ .Params.condition }}){{ end }}
           </a>
+          <a href="#condition">{{ if isset .Params "condition" }}*{{ end }}</a>
         </p>
       {{ end }}
 
@@ -98,6 +99,11 @@
       {{ end }}
 
       {{.Content}}
+
+      <!-- Footnote from 'Buy now' button. See above ^ -->
+      {{ if isset .Params "condition" }}
+        <p id="condition">*only available {{ .Params.condition }}</p>
+      {{ end }}
     </main>
 
     {{ partial "footer" . }}
