@@ -1,25 +1,33 @@
-//
-// Normalise
-//
-
-@import "fonts";
-@import "modern-normalize";
-
-//
-// Layout
-//
-
-html { font-size: 19px }
-
-// Smaller font size on mobile devices
-@media all and (max-width: 560px) {
-  html { font-size: 17px }
+// Use more intuitive box model
+*, *:before, *:after {
+  box-sizing: border-box;
 }
 
 // Zero default spacing and padding to get a fresh start
 * {
   margin: 0;
   padding: 0;
+}
+
+// Get webfonts
+@import "fonts";
+
+//
+// Layout
+//
+
+// A smaller font size than what you usually see on websites -- this is because
+// FF More, the body text font, has very short extenders, making it sit larger
+// in the font file compared to most other typefaces.
+html {
+  font-size: 19px;
+}
+
+// Smaller font size on mobile devices
+@media all and (max-width: 560px) {
+  html {
+    font-size: 17px;
+  }
 }
 
 // We put the code to position the textblock into a mixin because it is reused
