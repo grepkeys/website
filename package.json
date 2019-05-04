@@ -17,9 +17,9 @@
   },
   "homepage": "https://grepkeys.github.io",
   "devDependencies": {
-    "autoprefixer": "^9.4.7",
-    "cssnano": "^4.1.8",
-    "postcss-cli": "^6.1.1"
+    "autoprefixer": "^9.5.1",
     "css-declaration-sorter": "^4.0.1",
+    "cssnano": "^4.1.10",
+    "postcss-cli": "^6.1.2"
   }
 }
