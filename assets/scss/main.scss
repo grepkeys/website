@@ -102,8 +102,8 @@ main {
 //
 // The space between pars is not added for the very last par by using margin-top
 // instead of margin-bottom. The selector is restricted to main because there
-// are no actual paragraphs of text that need separating outside it -- the space
-// becomes only a hindrance.
+// are no pars that are used for content (rather than e.g. nav bars) that need
+// separating outside it -- the space becomes only a hindrance.
 main p,
 main ul,
 main ol {
@@ -586,6 +586,57 @@ main img {
 }
 header span {
   display: inline;
+}
+
+//
+// Lists
+//
+
+// Remove regular list formatting and indent lists very slightly from the edge
+// of the textblock
+main ul,
+main ol {
+  list-style-type: none;
+  margin-left: 1.7rem;
+}
+
+// Add some space between list items
+main li {
+  margin-bottom: 0.25rem;
+}
+
+// Create a counter for each ordered list that stores the index of each list
+// item label
+main ol li {
+  counter-increment: listcounter;
+}
+
+// Basic code to position some text of choice in front of each list item
+main li:before {
+  position: absolute;
+  display: inline-block;
+  width: 2rem;
+  margin-left: -2rem;
+  padding-right: 1rem;
+  text-align: right;
+
+  // Slightly fade list item labels to offset them from the main text
+  color: rgba($fg-color, 0.9);
+}
+
+// Use tabular text figures for ordered list labels to make sure the numbers all
+// line up in a neat column. Additionally, we remove the full stop after each
+// list item as it is not needed -- whitespace is enough.
+main ol li:before {
+  content: counter(listcounter);
+  font-variant-numeric: oldstyle-nums tabular-nums;
+}
+
+// The 'bullet' character is too thick in FF More, so we use the bold version
+// of the midpoint (which is too thin in the regular weight).
+main ul li:before {
+  content: '·';
+  font-weight: 600;
 }
 
 //
