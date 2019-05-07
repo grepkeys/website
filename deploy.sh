@@ -8,7 +8,7 @@ cd $projroot
 # the website committed to grepkeys.github.io matches what the website looked
 # like as of the last commit.
 if ! git diff-index --quiet HEAD --; then
-  git stash --include-untracked --keep-index
+  git stash --include-untracked --keep-index > /dev/null
 fi
 
 # I never run `hugo` by itself during normal development -- only `hugo server`,
@@ -23,8 +23,9 @@ cd $projroot
 rm -r public/*
 hugo --minify > /dev/null
 
+# Restore any unstaged changed that were removed by the git stash earlier
 if ! git diff-index --quiet HEAD --; then
-  git stash pop
+  git stash pop > /dev/null
 fi
 
 cd public
