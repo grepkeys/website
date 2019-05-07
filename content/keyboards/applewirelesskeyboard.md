@@ -2,6 +2,11 @@
 title: "Apple Wireless Keyboard"
 purchase_link: https://www.amazon.com/Apple-Wireless-Keyboard-Bluetooth-Refurbished/dp/B0146YF1FO
 condition: renewed
+switches:
+    -
+        name: "Apple"
+        switches:
+        - membrane
 ---
 
 Git gud and buy a real keyboard. Seriously though, it's not very good. The Apple Wireless Keyboard is a keyboard produced by Apple that ships with their desktop computers, but can also be bought separately. At least, it used to be. After many years, Apple decided that they wanted to update their keyboard offering, so they created the [Magic Keyboard](https://en.wikipedia.org/wiki/Magic_Keyboard). This means that the keyboard is not sold any longer, and, at the time of writing, is not available brand new (as reflected in our purchase link).
