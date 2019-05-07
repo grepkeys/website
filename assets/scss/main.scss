@@ -95,11 +95,18 @@ main {
   hyphens: auto;
 }
 
-// Space between paragraphs, but make sure not to add it for the very last
-// paragraph. The selector is restricted to main because there are no actual
-// paragraphs of text that need separating outside it -- the space becomes only
-// a hindrance.
-main * + p {
+// Space between paragraphs and lists.
+//
+// In this explanation I will refer to paragraphs and lists simply as pars to
+// make it easier to read.
+//
+// The space between pars is not added for the very last par by using margin-top
+// instead of margin-bottom. The selector is restricted to main because there
+// are no actual paragraphs of text that need separating outside it -- the space
+// becomes only a hindrance.
+main p,
+main ul,
+main ol {
   margin-top: 0.75em;
 }
 
