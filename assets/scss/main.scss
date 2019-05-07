@@ -607,24 +607,6 @@ footer p {
   padding-bottom: 1rem;
 }
 
-// Abbreviations
-
-// Small-caps
-abbr {
-  font-variant-caps: all-small-caps;
-  letter-spacing: 0.05em;
-}
-
-// Remove dotted underline
-abbr[title] {
-  text-decoration: none;
-}
-
-// Show a help cursor
-abbr[title] {
-  cursor: help;
-}
-
 // Divider
 
 // Replace horizontal line element with three centered middots
