@@ -1,5 +1,5 @@
 ---
-title: "Rubber Dome over Membrane"
+title: "Membrane Switch"
 short_title: "Membrane"
 ---
 
