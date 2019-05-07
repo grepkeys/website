@@ -236,14 +236,14 @@ main a:any-link::selection {
 //
 // Normal card pages only have one column, so the only reason we keep CSS Grid
 // there is to neatly handle the gaps between items. On pages that require
-// smaller cards we simply change the number of columns from one to two.
+// smaller cards we simply change the number of columns from one to three.
 .cards {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-gap: 1rem;
 }
 .smallcards {
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .card {
