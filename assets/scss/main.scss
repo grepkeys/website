@@ -538,6 +538,50 @@ main img {
 }
 
 //
+// 'Buy now' button
+//
+
+.buybutton {
+  display: inline-block;
+  font-family: $sans-fonts;
+  padding: 0.5rem;
+
+  border: 1px solid rgba($fg-color, 0.1);
+  border-radius: 3px;
+
+  // Original line height makes padding uneven
+  line-height: 1.1;
+}
+
+// Reset default link styling
+.buybutton a {
+  @include remove-link-formatting;
+}
+
+// Shadow and background tinted lime-green react to hover
+.buybutton {
+  background-color: rgba($brightlime, 0.1);
+  @include light-shadow;
+  transition: background-color 250ms ease-out, box-shadow 250ms ease-out;
+}
+.buybutton:hover {
+  background-color: rgba($brightlime, 0.25);
+  @include strong-shadow;
+}
+
+// Slot in next to header
+//
+// The margin makes sure wrapping occurs a little before the text juts against
+// the button's edge
+.buybutton {
+  float: right;
+  margin-left: 0.7rem;
+}
+header span {
+  display: inline;
+}
+
+//
 // Other elements
 //
 
@@ -579,48 +623,6 @@ abbr[title] {
 // Show a help cursor
 abbr[title] {
   cursor: help;
-}
-
-// 'Buy now' button
-
-.buybutton {
-  display: inline-block;
-  font-family: $sans-fonts;
-  padding: 0.5rem;
-
-  border: 1px solid rgba($fg-color, 0.1);
-  border-radius: 3px;
-
-  // Original line height makes padding uneven
-  line-height: 1.1;
-}
-
-// Reset default link styling
-.buybutton a {
-  @include remove-link-formatting;
-}
-
-// Shadow and background tinted lime-green react to hover
-.buybutton {
-  background-color: rgba($brightlime, 0.1);
-  @include light-shadow;
-  transition: background-color 250ms ease-out, box-shadow 250ms ease-out;
-}
-.buybutton:hover {
-  background-color: rgba($brightlime, 0.25);
-  @include strong-shadow;
-}
-
-// Slot in next to header
-//
-// The margin makes sure wrapping occurs a little before the text juts against
-// the button's edge
-.buybutton {
-  float: right;
-  margin-left: 0.7rem;
-}
-header span {
-  display: inline;
 }
 
 // Divider
