@@ -16,6 +16,11 @@
     "url": "https://github.com/grepkeys/website/issues"
   },
   "homepage": "https://grepkeys.github.io",
+  "browserslist": [
+    "> 0.5% in AU",
+    "last 3 versions",
+    "not dead"
+  ],
   "devDependencies": {
     "autoprefixer": "^9.5.1",
     "css-declaration-sorter": "^4.0.1",
