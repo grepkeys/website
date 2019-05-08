@@ -1,12 +1,11 @@
 module.exports = {
   plugins: [
-    require("autoprefixer")({
-      grid: "no-autoplace",
-    }),
     require("cssnano")({
       preset: 'default',
     }),
     require("css-declaration-sorter"),
-    require("postcss-preset-env"),
+    require("postcss-preset-env")({
+      autoprefixer: { grid: "no-autoplace" }
+    }),
   ],
 };
