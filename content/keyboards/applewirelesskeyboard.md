@@ -9,6 +9,12 @@ switches:
         - membrane
 ---
 
+- Membrane switch results in mediocre typing experience
+- Size, weight and lack of cables results in great portability
+- Only available refurbished or second hand
+
+---
+
 Git gud and buy a real keyboard. Seriously though, it's not very good. The Apple Wireless Keyboard is a keyboard produced by Apple that ships with their desktop computers, but can also be bought separately. At least, it used to be. After many years, Apple decided that they wanted to update their keyboard offering, so they created the [Magic Keyboard](https://en.wikipedia.org/wiki/Magic_Keyboard). This means that the keyboard is not sold any longer, and, at the time of writing, is not available brand new (as reflected in our purchase link).
 
 As the name implies, it is able to connect wirelessly to computers with Bluetooth. However, in our experience this does not work very well, since the Bluetooth connection seems to lack stability. The keycaps used are made of a blindingly white, thin plastic in the chiclet style which leads them to show dirt very easily. 
