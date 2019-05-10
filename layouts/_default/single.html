@@ -68,25 +68,8 @@
       <!--   /assets/img/applewirelesskeyboard.jpg -->
       {{ $path := (printf "img/%s.jpg" .File.BaseFileName) }}
       {{ if fileExists (printf "/assets/%s" $path) }}
-        {{ $img := resources.Get $path }}
-
-        <!-- Use imageConfig function to extract aspect ratio of -->
-        <!-- original image -->
-        {{ $imgdata := imageConfig (printf "/assets/%s" $path) }}
-        {{ $imgaspect := div (float $imgdata.Height) $imgdata.Width }}
-
-        <!-- Use padding-top hack to create a wrapper div around each -->
-        <!-- image that has a fixed aspect ratio the same as the -->
-        <!-- image. This means that the layout doesn't jump around as  -->
-        <!-- images load -->
-        <div
-          class="imgwrapper heroimg"
-          style="padding-top: {{ mul $imgaspect 100 }}%"
-        >
-          <!-- Resize images to be 2048 pixels wide -->
-          {{ with $img }}
-            <img alt="{{ $title }}" src="{{ (.Resize "2048x").Permalink }}">
-          {{ end }}
+        <div class="heroimg">
+          {{ partial "img" (dict "path" $path "alt" .Title "width" "2048x") }}
         </div>
       {{ end }}
 
