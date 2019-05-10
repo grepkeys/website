@@ -75,6 +75,18 @@
 
       {{.Content}}
 
+      <!-- Video format is the same as image format, but with .mp4, e.g. -->
+      <!--   /content/keyboards/applewirelesskeyboard.md -->
+      <!-- is -->
+      <!--   /assets/img/applewirelesskeyboard.mp4 -->
+      {{ $path := (printf "vid/%s.mp4" .File.BaseFileName) }}
+      {{ if fileExists (printf "/assets/%s" $path) }}
+        {{ $vid := resources.Get $path }}
+        <video controls>
+          <source src="{{ $vid.Permalink }}" type="video/mp4">
+        </video>
+      {{ end }}
+
       <!-- Footnote from 'Buy now' button. See above ^ -->
       {{ if isset .Params "condition" }}
         <p id="condition">*only available {{ .Params.condition }}</p>
