@@ -599,9 +599,9 @@ main ol {
   margin-left: 1.7rem;
 }
 
-// Add some space between list items
-main li {
-  margin-bottom: 0.25rem;
+// Add some space between consecutive list items
+main li + li {
+  margin-top: 0.25rem;
 }
 
 // Create a counter for each ordered list that stores the index of each list
