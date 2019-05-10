@@ -531,11 +531,10 @@ main img {
   background-color: rgba($fg-color, 0.05);
 }
 
-// Add an extremely subtle rounded border to hero images. Combined with some
-// extra space below it makes the hero image much more prominent.
+// Add a subtle rounded border to hero images to delineate their edges, as often
+// they have a white background that clashes with the site's background colour.
 .heroimg {
-  margin-bottom: 1rem;
-  border: 1px solid rgba($fg-color, 0.02);
+  border: 1px solid rgba($fg-color, 0.1);
   border-radius: 3px;
 }
 
