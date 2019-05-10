@@ -17,9 +17,7 @@
   },
   "homepage": "https://grepkeys.github.io",
   "browserslist": [
-    "> 0.5% in AU",
-    "last 3 versions",
-    "not dead"
+    "> 2% in AU"
   ],
   "devDependencies": {
     "css-declaration-sorter": "^4.0.1",
