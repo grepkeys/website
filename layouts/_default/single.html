@@ -62,40 +62,32 @@
     {{ $title := .Title }}
 
     <main>
-      <!-- Only show hero image if this is a switch or keyboard page (in -->
-      <!-- contrast to e.g. the about page). -->
-      {{ if or (eq .Section "keyboards") (eq .Section "switches") }}
-        <!-- Image format for e.g. -->
-        <!--   /content/keyboards/applewirelesskeyboard.md -->
-        <!-- is -->
-        <!--   /assets/img/applewirelesskeyboard.md -->
-        {{ $path := (printf "img/%s.jpg" .File.BaseFileName) }}
-        {{ if fileExists (printf "/assets/%s" $path) }}
-          {{ $img := resources.Get $path }}
+      <!-- Image format for e.g. -->
+      <!--   /content/keyboards/applewirelesskeyboard.md -->
+      <!-- is -->
+      <!--   /assets/img/applewirelesskeyboard.jpg -->
+      {{ $path := (printf "img/%s.jpg" .File.BaseFileName) }}
+      {{ if fileExists (printf "/assets/%s" $path) }}
+        {{ $img := resources.Get $path }}
 
-          <!-- Use imageConfig function to extract aspect ratio of -->
-          <!-- original image -->
-          {{ $imgdata := imageConfig (printf "/assets/%s" $path) }}
-          {{ $imgaspect := div (float $imgdata.Height) $imgdata.Width }}
+        <!-- Use imageConfig function to extract aspect ratio of -->
+        <!-- original image -->
+        {{ $imgdata := imageConfig (printf "/assets/%s" $path) }}
+        {{ $imgaspect := div (float $imgdata.Height) $imgdata.Width }}
 
-          <!-- Use padding-top hack to create a wrapper div around each -->
-          <!-- image that has a fixed aspect ratio the same as the -->
-          <!-- image. This means that the layout doesn't jump around as  -->
-          <!-- images load -->
-          <!-- -->
-          <!-- The - 0.2 removes some small amount that for some reason the -->
-          <!-- browser adds -- without it the wrapper is too tall. I also -->
-          <!-- don't know why. -->
-          <div
-            class="imgwrapper heroimg"
-            style="padding-top: {{ sub (mul $imgaspect 100) 0.2 }}%"
-          >
-            <!-- Resize images to be 1024 pixels wide -->
-            {{ with $img }}
-              <img alt="{{ $title }}" src="{{ (.Resize "1024x").Permalink }}">
-            {{ end }}
-          </div>
-        {{ end }}
+        <!-- Use padding-top hack to create a wrapper div around each -->
+        <!-- image that has a fixed aspect ratio the same as the -->
+        <!-- image. This means that the layout doesn't jump around as  -->
+        <!-- images load -->
+        <div
+          class="imgwrapper heroimg"
+          style="padding-top: {{ mul $imgaspect 100 }}%"
+        >
+          <!-- Resize images to be 1024 pixels wide -->
+          {{ with $img }}
+            <img alt="{{ $title }}" src="{{ (.Resize "1024x").Permalink }}">
+          {{ end }}
+        </div>
       {{ end }}
 
       {{.Content}}
