@@ -416,8 +416,9 @@ nav li:hover {
 // List of switches
 //
 
-// Add a little space below the entire switches section
-.switches {
+// Add a little space below each switch manufacturer's section, thereby also
+// adding space between the entire switches section and <main>
+.switches section {
   margin-bottom: 1rem;
 }
 
