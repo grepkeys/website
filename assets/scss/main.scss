@@ -507,11 +507,12 @@ nav li:hover {
 .cherry-speed     { background-color: #b3b5b7; }
 
 //
-// Images
+// Images and video
 //
 
-// Make all images responsively fit the environment they are in
-main img {
+// Make all images and video responsively fit the environment they are in
+main img,
+main video {
   width: 100%;
   height: auto;
 }
@@ -526,7 +527,7 @@ main img {
   height: 0;
 }
 
-// Show a light grey box where images are supposed to load
+// Show a light grey box that images load into
 .imgwrapper {
   background-color: rgba($fg-color, 0.05);
 }
