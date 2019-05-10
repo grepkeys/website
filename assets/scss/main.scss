@@ -371,13 +371,11 @@ nav li:hover {
 // Homepage and 404
 //
 
-// Vertically center (well, not really -- a little less space on top than on the
-// bottom) content on homepage.
-//
-// We use padding because we don't want the top of the homepage to be cut off
-// (negative values are not possible for padding)
+// Vertically center content on homepage using CSS Grid
 .home main {
-  padding-top: 35vh;
+  display: grid;
+  align-content: center;
+  height: 100vh;
 }
 
 // Increase font size of greeting on homepage to counteract large amount of
