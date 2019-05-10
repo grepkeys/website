@@ -666,7 +666,8 @@ footer p {
 
 // Divider
 
-// Replace horizontal line element with three centered middots
+// Replace horizontal line element with three centered middots, spaced with en
+// quads
 hr {
   text-align: center;
   margin-left: auto;
@@ -675,10 +676,9 @@ hr {
   border: none;
 }
 hr:before {
-    content: '···';
+    content: '· · ·';
     display: block;
     font-size: 1.5rem;
-    letter-spacing: 0.6em;
 }
 
 // Selections
