@@ -83,9 +83,9 @@
           class="imgwrapper heroimg"
           style="padding-top: {{ mul $imgaspect 100 }}%"
         >
-          <!-- Resize images to be 1024 pixels wide -->
+          <!-- Resize images to be 2048 pixels wide -->
           {{ with $img }}
-            <img alt="{{ $title }}" src="{{ (.Resize "1024x").Permalink }}">
+            <img alt="{{ $title }}" src="{{ (.Resize "2048x").Permalink }}">
           {{ end }}
         </div>
       {{ end }}
