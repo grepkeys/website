@@ -36,10 +36,8 @@ html {
   // A little padding on the left and right of the textblock to prevent it from
   // being flush against the sides of the display on mobile
   padding: 0rem 1rem;
-
   max-width: 35rem;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }
 
 body {
@@ -95,19 +93,10 @@ main {
   hyphens: auto;
 }
 
-// Space between paragraphs and lists.
-//
-// In this explanation I will refer to paragraphs and lists simply as pars to
-// make it easier to read.
-//
-// The space between pars is not added for the very last par by using margin-top
-// instead of margin-bottom. The selector is restricted to main because there
-// are no pars that are used for content (rather than e.g. nav bars) that need
-// separating outside it -- the space becomes only a hindrance.
-main p,
-main ul,
-main ol {
-  margin-top: 0.75em;
+// Lobotomised owl selector -- adds 0.75em space between adjacent siblings. See
+// http://alistapart.com/article/axiomatic-css-and-lobotomized-owls/
+main * + * {
+  margin-top: 1em;
 }
 
 // Apply previously-defined base colours
@@ -253,6 +242,12 @@ main a:any-link::selection {
 }
 .smallcards {
   grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+}
+
+// The lobotomised owl selector (* + *) adds some space between and inside cards
+// that we don't want, so zero all margins amongst cards
+.cards * {
+  margin: 0;
 }
 
 .card {
