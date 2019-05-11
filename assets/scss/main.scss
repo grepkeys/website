@@ -522,13 +522,13 @@ main img {
   position: absolute;
   top: 0;
 }
-.imgwrapper {
+.imgaspectkeep {
   position: relative;
   height: 0;
 }
 
 // Show a light grey box that images load into
-.imgwrapper {
+.imgaspectkeep {
   background-color: rgba($fg-color, 0.05);
 }
 
