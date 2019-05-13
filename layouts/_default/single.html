@@ -78,13 +78,68 @@
       <!-- Video format is the same as image format, but with .mp4, e.g. -->
       <!--   /content/keyboards/applewirelesskeyboard.md -->
       <!-- is -->
-      <!--   /assets/img/applewirelesskeyboard.mp4 -->
+      <!--   /assets/vid/applewirelesskeyboard.mp4 -->
       {{ $path := (printf "vid/%s.mp4" .File.BaseFileName) }}
       {{ if fileExists (printf "/assets/%s" $path) }}
         {{ $vid := resources.Get $path }}
         <video controls>
           <source src="{{ $vid.Permalink }}" type="video/mp4">
         </video>
+
+        <!-- Caption for video giving credit to the author and what keyboard -->
+        <!-- they are using -->
+        <!-- -->
+        <!-- - video_author specifies the name of the video's author. -->
+        <!-- - video_kb specifies the name of the keyboard featured in the -->
+        <!--   video. -->
+        <!-- - video_kb_slug specifies the slug of one of our keyboard -->
+        <!--   articles that is to be linked to. If video_kb has not been -->
+        <!--   set but video_kb_slug has, then the name of the keyboard is -->
+        <!--   inferred to be the title of the specified article. -->
+
+        {{ $is_video_author := isset .Params "video_author" }}
+        {{ $is_video_kb := isset .Params "video_kb" }}
+        {{ $is_video_kb_slug := isset .Params "video_kb_slug" }}
+
+        {{ if or $is_video_author $is_video_kb $is_video_kb_slug }}
+          <p>
+            <!-- Author name and an en dash -->
+            {{ if $is_video_author }}
+              Video from {{ .Params.video_author }} –
+            {{ end }}
+
+            <!-- Keyboard name -->
+            {{ if or $is_video_kb $is_video_kb_slug }}
+              keyboard used is a
+
+              <!-- Insert <a> before and after keyboard name if one of our -->
+              <!-- articles has been specified-->
+              {{ if $is_video_kb_slug }}
+                <a href="/keyboards/{{ .Params.video_kb_slug }}">
+              {{ end }}
+
+              <!-- Figure out how to display the name of the keyboard -->
+
+              {{ if $is_video_kb }}
+                {{ .Params.video_kb }}
+              {{ else }}
+
+                <!-- Insert the title of the page being linked to if no -->
+                <!-- title has been set explicitly. -->
+                <!-- -->
+                <!-- We don't check if video_kb_slug is set because the -->
+                <!-- current block will only run if either video_kb or -->
+                <!-- video_kb_slug are set. -->
+                {{ $page := .Site.GetPage (printf "/keyboards/%s" .Params.video_kb_slug) }}
+                {{ $page.Title }}
+              {{ end }}
+
+              {{ if $is_video_kb_slug }}
+                </a>
+              {{ end }}
+            {{ end }}
+          </p>
+        {{ end }}
       {{ end }}
 
       <!-- Footnote from 'Buy now' button. See above ^ -->
