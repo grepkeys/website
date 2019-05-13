@@ -539,6 +539,13 @@ main img {
   border-radius: 3px;
 }
 
+// Make hero images wider than the textblock if possible while keeping their
+// previous positioning
+.heroimg {
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
 //
 // 'Buy now' button
 //
@@ -675,6 +682,18 @@ hr:before {
     content: '· · ·';
     display: block;
     font-size: 1.5rem;
+}
+
+// Fullwidth
+
+// A div that spans the entire screen width
+.fullwidth {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
 }
 
 // Selections
