@@ -193,8 +193,8 @@ header {
 // We also make the underline 0.05em shorter either side. This helps minimise
 // small bits of underline sticking out from descenders at the beginning or end
 // of a link.
+$link-inset-length: 0.05em;
 main a:any-link {
-  $link-inset-length: 0.05em;
   @include remove-link-formatting;
 
   text-shadow:
@@ -544,6 +544,22 @@ main img {
 .heroimg {
   max-width: 40rem;
   margin: 0 auto;
+}
+
+// Make image captions less obtrusive and offset them from the rest of the text
+figcaption {
+  font-family: $sans-fonts;
+  font-size: 0.8rem;
+  text-align: center;
+  color: rgba($fg-color, 0.9);
+
+  // Reduce space between image and caption
+  margin-top: 0.5rem;
+
+  // Increase space above any link underlines that may be present in the caption
+  & a:any-link {
+    background-position: $link-inset-length 94%;
+  }
 }
 
 //
