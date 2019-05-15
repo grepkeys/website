@@ -1,6 +1,9 @@
 ---
 title: "Cherry MX Red"
 short_name: "MX Red"
+video_author: "Brandon Taylor"
+video_kb: "Ducky One 2 Mini"
+video_kb_slug: "ducky-one-2"
 ---
 
 The Cherry MX Red is a linear switch manufactured by the popular mechanical switch brand Cherry. These switches are generally regarded as one of the best switches for gaming due to their linearity. *Linear* means that the switch lacks any kind of tactile bump or click at all. Linearity, however, removes any feedback to whether a keystroke has registered, save bottoming out. This can make for a bit of a learning curve for new users.
