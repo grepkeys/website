@@ -67,9 +67,14 @@
       <!-- is -->
       <!--   /assets/img/applewirelesskeyboard.jpg -->
       {{ $path := (printf "img/%s.jpg" .File.BaseFileName) }}
-      <div class="fullwidth"><div class="heroimg">
-        {{ partial "img" (dict "path" $path "alt" .Title "width" "2048x") }}
-      </div></div>
+      <!-- Only add image if one exists. Although this is already run inside -->
+      <!-- the img partial to prevent errors, it isn't running at this level -->
+      <!-- as well, so we add it again. -->
+      {{ if fileExists (printf "/assets/%s" $path) }}
+        <div class="fullwidth"><div class="heroimg">
+          {{ partial "img" (dict "path" $path "alt" .Title "width" "2048x") }}
+        </div></div>
+      {{ end }}
 
       {{.Content}}
 
