@@ -67,11 +67,9 @@
       <!-- is -->
       <!--   /assets/img/applewirelesskeyboard.jpg -->
       {{ $path := (printf "img/%s.jpg" .File.BaseFileName) }}
-      {{ if fileExists (printf "/assets/%s" $path) }}
-        <div class="fullwidth"><div class="heroimg">
-          {{ partial "img" (dict "path" $path "alt" .Title "width" "2048x") }}
-        </div></div>
-      {{ end }}
+      <div class="fullwidth"><div class="heroimg">
+        {{ partial "img" (dict "path" $path "alt" .Title "width" "2048x") }}
+      </div></div>
 
       {{.Content}}
 

@@ -2,23 +2,29 @@
 <!-- .path = path to image, relative to /assets/ -->
 <!-- .alt = alt-text of image -->
 <!-- .width = width image will be resized to -->
-{{ $img := resources.Get .path }}
 
-<!-- Use imageConfig function to extract aspect ratio of -->
-<!-- original image -->
-{{ $imgdata := imageConfig (printf "/assets/%s" .path) }}
-{{ $imgaspect := div (float $imgdata.Height) $imgdata.Width }}
+<!-- We wrap the entire partial in an if statement that checks for the -->
+<!-- image's existence not because we will ever publish an article without -->
+<!-- an image, but because otherwise, during the writing of articles that -->
+<!-- don't yet have images, Hugo will error and the writer will not be able -->
+<!-- to view a preview of what the article will look like once published. -->
+{{ if fileExists (printf "/assets/%s" .path) }}
+  {{ $img := resources.Get .path }}
 
-<!-- Use padding-top hack to create a wrapper div around each -->
-<!-- image that has a fixed aspect ratio the same as the -->
-<!-- image. This means that the layout doesn't jump around as  -->
-<!-- images load -->
-<div
-  class="imgaspectkeep"
-  style="padding-top: {{ mul $imgaspect 100 }}%"
->
-  <img
-    alt="{{ .alt }}"
-    src='{{ ($img.Resize .width).Permalink }}'
+  <!-- Use imageConfig function to extract aspect ratio of original image -->
+  {{ $imgdata := imageConfig (printf "/assets/%s" .path) }}
+  {{ $imgaspect := div (float $imgdata.Height) $imgdata.Width }}
+
+  <!-- Use padding-top hack to create a wrapper div around each image that -->
+  <!-- has a fixed aspect ratio the same as the image. This means that the -->
+  <!-- layout doesn't jump around as images load. -->
+  <div
+    class="imgaspectkeep"
+    style="padding-top: {{ mul $imgaspect 100 }}%"
   >
-</div>
+    <img
+      alt="{{ .alt }}"
+      src='{{ ($img.Resize .width).Permalink }}'
+    >
+  </div>
+{{ end }}
