@@ -539,6 +539,12 @@ main img {
   border-radius: 3px;
 }
 
+// This ensures that the image itself is also rounded, rather than only the
+// .heroimg wrapper
+.heroimg * {
+  border-radius: 3px;
+}
+
 // Make hero images wider than the textblock if possible while keeping their
 // previous positioning
 .heroimg {
