@@ -167,20 +167,16 @@ header {
 // Links
 //
 
-// Mixin to clear link formatting
-@mixin remove-link-formatting {
-  // This removes the link formatting applied using the clever hack a little
-  // down the file. Although this mixin is used inside that section, the
-  // background-image and text-shadow that the hack uses to work overrides this
-  // one.
-  background-image: none;
-  text-shadow: none;
-
-  // Although standard links do this, any links that are found outside the main
-  // tag still have the horrible default colours and underline, so a removal of
-  // link formatting still needs this.
+// Clear default link formatting
+a {
   text-decoration: none;
   color: inherit;
+}
+
+// Fade link text upon click to make website feel more interactive, without
+// being distracting (like hover)
+a:active {
+  color: rgba($fg-color, 0.5);
 }
 
 // Use a trick using a gradient to create a very basic, easy to control and
@@ -194,9 +190,7 @@ header {
 // small bits of underline sticking out from descenders at the beginning or end
 // of a link.
 $link-inset-length: 0.05em;
-main a:any-link {
-  @include remove-link-formatting;
-
+main a {
   text-shadow:
    -1px -1px 0 $bg-color,
     1px -1px 0 $bg-color,
@@ -211,12 +205,6 @@ main a:any-link {
   background-size: calc(100% - #{$link-inset-length} * 2) 1px;
   background-repeat: no-repeat;
   background-position: $link-inset-length 92%;
-}
-
-// Fade link text upon click to make website feel more interactive, without
-// being distracting (like hover)
-main a:any-link:active {
-  color: rgba($fg-color, 0.5);
 }
 
 // Remove descender avoidance on selection because it looks very strange to have
@@ -283,12 +271,6 @@ main a:any-link::selection {
 // Slightly larger (than body text) font for the title of each card
 .cardtitle {
   font-size: 1.1rem;
-}
-
-// Remove the underlink links usually get (the overspecificity's purpose is to
-// override the link formatting's high specificity)
-.card .cardlink {
-  @include remove-link-formatting;
 }
 
 //
@@ -392,10 +374,9 @@ nav li:hover {
   margin-top: 0.5rem;
 }
 
-// Make the links on the homepage lime-green, removing their underline. Add a
-// slightly rounded green highlight upon hover.
+// Make the links on the homepage lime-green and add a slightly rounded green
+// highlight upon hover.
 #greeting a {
-  @include remove-link-formatting;
   color: $lime;
   border-radius: 3px;
   transition: background-color 500ms cubic-bezier(0, 0, 0.33, 1);
@@ -484,7 +465,6 @@ nav li:hover {
 
 // Use a small sanserif font for switch labels
 .switch a {
-  @include remove-link-formatting;
   font-family: $sans-fonts;
   font-size: 0.7rem;
 }
@@ -582,11 +562,6 @@ figcaption {
 
   // Original line height makes padding uneven
   line-height: 1.1;
-}
-
-// Reset default link styling
-.buybutton a {
-  @include remove-link-formatting;
 }
 
 // Shadow and background tinted lime-green react to hover
