@@ -13,7 +13,7 @@
     <!-- card format -->
     {{ $smallcardpages := slice "switches" }}
 
-    <main class="
+    <div class="
       cards
       {{ if in $smallcardpages .Section }}
         smallcards
@@ -37,7 +37,7 @@
           </a>
         </div>
       {{ end }}
-    </main>
+    </div>
 
     {{ partial "footer" . }}
   </body>

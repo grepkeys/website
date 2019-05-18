@@ -491,14 +491,14 @@ nav li:hover {
 //
 
 // Make all images and video responsively fit the environment they are in
-main img,
-main video {
+img,
+video {
   width: 100%;
   height: auto;
 }
 
 // Some setup needed for the fixed aspect ratio image wrapper to work
-main img {
+.imgaspectkeep img {
   position: absolute;
   top: 0;
 }
