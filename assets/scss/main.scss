@@ -45,7 +45,13 @@ body {
 // Type
 //
 
-// Basic typographic settings
+// Colours
+
+$fg-color:   #333333;
+$bg-color:   #fdfdfd;
+// ---
+$lime:       #00af8b;
+$brightlime: #00ffca;
 
 // Fonts
 
@@ -70,19 +76,17 @@ $sys-fonts:
 $serif-fonts: ff-more, $sys-fonts;
 $sans-fonts: ff-nuvo, $serif-fonts;
 
-// Colours
-
-$fg-color:   #333333;
-$bg-color:   #fdfdfd;
-// ---
-$lime:       #00af8b;
-$brightlime: #00ffca;
-
+// Use serif font for actual body content, and use sans for everything else
 body {
-  font-family: $serif-fonts;
+  font-family: $sans-fonts;
   font-size: 1rem;
   line-height: 1.6;
 }
+main {
+  font-family: $serif-fonts;
+}
+
+// Other
 
 // Enable automatic hyphenation, but only for the main content of the page --
 // not for, e.g., navigation.
@@ -144,12 +148,10 @@ h2 {
 // The title of the current page
 
 header span {
-  font-family: $sans-fonts;
-  font-size: 1.5rem;
-
   // As the fonts we use do not have optical sizes, we compensate as best as we
   // can by slightly reducing letter spacing
   letter-spacing: -0.01rem;
+  font-size: 1.5rem;
 }
 
 // Add some space above and below to make the page less cramped and to emphasise
@@ -282,11 +284,10 @@ nav {
   width: 100%;
   z-index: 99;
 
-  // Offset it from the main content through the use of a small sans, a white
-  // background that contrasts slightly with the site's light grey background,
-  // and a very light shadow.
+  // Offset it from the main content through the use of a smaller typeface, a
+  // white background that contrasts slightly with the site's light grey
+  // background, and a very light shadow.
   background-color: white;
-  font-family: $sans-fonts;
   font-size: 0.85rem;
   box-shadow: 0 2px 6px rgba($fg-color, 0.1);
 
@@ -386,9 +387,11 @@ nav a:hover {
   height: 100vh;
 }
 
-// Increase font size of greeting on homepage to counteract large amount of
-// whitespace
+// Use larger font for greeting on homepage to counteract large amount of
+// whitespace, and use serif to convey the main 'identity' of GrepKeys right
+// from the start.
 #greeting {
+  font-family: $serif-fonts;
   font-size: 1.3rem;
 }
 
@@ -431,7 +434,6 @@ nav a:hover {
 // Make heading above switches section more subtle as we want the user to focus
 // on the switches and the article, not an unimportant heading.
 .switches > p {
-  font-family: $sans-fonts;
   font-variant-caps: all-small-caps;
   color: rgba($fg-color, 0.4);
   letter-spacing: 0.02em;
@@ -440,7 +442,6 @@ nav a:hover {
 
 // Make manufacturer label less prominent
 .manufacturer {
-  font-family: $sans-fonts;
   font-size: 0.8rem;
   font-variant-caps: all-small-caps;
   color: rgba($fg-color, 0.4);
@@ -493,9 +494,8 @@ nav a:hover {
   border-radius: 3px;
 }
 
-// Use a small sanserif font for switch labels
+// Use a small font for switch labels to make them less obtrusive
 .switch a {
-  font-family: $sans-fonts;
   font-size: 0.7rem;
 }
 
@@ -587,7 +587,6 @@ figcaption {
 
 .buybutton {
   display: inline-block;
-  font-family: $sans-fonts;
   padding: 0.5rem;
 
   border: 1px solid rgba($fg-color, 0.1);
