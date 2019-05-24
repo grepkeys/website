@@ -30,18 +30,15 @@ html {
   }
 }
 
-// We put the code to position the textblock into a mixin because it is reused
-// later
-@mixin textblock-positioning {
-  // A little padding on the left and right of the textblock to prevent it from
-  // being flush against the sides of the display on mobile
-  padding: 0rem 1rem;
+// Keep the textblock at a reasonable line length in the center of the screen,
+// and prevent it from being flush against the sides of the display on mobile.
+// We save the amount added left and right as padding because we need to reuse
+// it later.
+$textblock-side-padding: 1rem;
+body {
+  padding: 0 $textblock-side-padding;
   max-width: 35rem;
   margin: 0 auto;
-}
-
-body {
-  @include textblock-positioning;
 }
 
 //
@@ -296,18 +293,16 @@ nav {
   // Ensure that all elements of the navbar are placed on one line
   display: flex;
 
+  // Give the navbar's content some room to breathe, using the same amount left
+  // and right as the textblock to make the edge content of the navbar line up
+  // with the textblock at smaller sizes
+  padding: 0.6rem $textblock-side-padding;
+
   // Transition to make autohide (from assets/js/main.js) animate smoothly
   //
   // To see why box-shadow is animated take a look at the afore-mentioned
   // JavaScript file.
   transition: top 200ms ease-out, box-shadow 300ms ease-out;
-}
-
-// Give the navbar's content some room to breathe.
-// We save the horizontal padding as a variable as it is needed later.
-$navhpadding: 1rem;
-nav {
-  padding: 0.6rem $navhpadding;
 }
 
 #navlinks,
@@ -326,11 +321,12 @@ nav {
   // Fade change between navbar and titlebar
   transition: visibility 200ms linear, opacity 200ms linear;
 
-  // Undo centering and snap navbar content to right edge of screen if the
-  // viewport is too narrow to accomodate centering
+  // Undo centering and snap navbar content to right edge of screen, keeping the
+  // same amount of padding that both the navbar and textblock use, if the
+  // viewport is too narrow to accomodate centering.
   @media all and (max-width: 37rem) {
     left: unset;
-    right: $navhpadding;
+    right: $textblock-side-padding;
     transform: none;
   }
 }
