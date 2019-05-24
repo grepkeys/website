@@ -10,24 +10,31 @@
         <!-- such as Contact and About, do not belong to any section, but -->
         <!-- pages part of a section do not have the same path as their -->
         <!-- corresponding list page. -->
-        {{ .Scratch.Add "id1" "" }}
-        {{ .Scratch.Add "id2" "" }}
+        <!-- -->
+        <!-- We use a locally scoped scratchpad and delete the values at the -->
+        <!-- end to prevent leakage, which caused a bug in the past where -->
+        <!-- random pages had mismatched current page highlighting. -->
+        {{ $scratch := newScratch }}
+        {{ $scratch.Add "id1" "" }}
+        {{ $scratch.Add "id2" "" }}
         {{ if eq $.Section "" }}
-          {{ .Scratch.Set "id1" .Path }}
-          {{ .Scratch.Set "id2" $.Path }}
+          {{ $scratch.Set "id1" .Path }}
+          {{ $scratch.Set "id2" $.Path }}
         {{ else }}
-          {{ .Scratch.Set "id1" .Section }}
-          {{ .Scratch.Set "id2" $.Section }}
+          {{ $scratch.Set "id1" .Section }}
+          {{ $scratch.Set "id2" $.Section }}
         {{ end }}
         <a
           href="{{ .Permalink }}"
 
-          {{ if eq (.Scratch.Get "id1") (.Scratch.Get "id2") }}
+          {{ if eq ($scratch.Get "id1") ($scratch.Get "id2") }}
             id="navthispage"
           {{ end }}
         >
           {{ .Title }}
         </a>
+        {{ $scratch.Delete "id1" }}
+        {{ $scratch.Delete "id2" }}
       </li>
     {{ end }}
   </ul>
