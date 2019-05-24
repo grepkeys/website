@@ -26,10 +26,6 @@
     <!-- A list of switches the keyboard is available with -->
     {{ if isset .Params "switches" }}
       <section class="switches">
-        <!-- Save these vars so that we can access them in ranges later -->
-        {{ $site := .Site }}
-        {{ $params := .Params }}
-
         <p>Available with:</p>
           {{ range .Params.switches }}
             <section>
@@ -46,7 +42,7 @@
                   <div class="switchcolourbox {{ $switch }}"></div>
 
                   <!-- Get short version of switch name if it exists -->
-                  {{ $page := $site.GetPage (printf "/switches/%s" $switch) }}
+                  {{ $page := $.Site.GetPage (printf "/switches/%s" $switch) }}
                   {{ if isset $page.Params "short_name" }}
                     <p>{{ $page.Params.short_name }}</p>
                   {{ else }}
