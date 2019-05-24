@@ -209,7 +209,7 @@ main a {
 
 // Remove descender avoidance on selection because it looks very strange to have
 // a white shadow around links.
-main a:any-link::selection {
+main a::selection {
   text-shadow: none;
 }
 
@@ -580,7 +580,7 @@ figcaption {
   margin-top: 0.5rem;
 
   // Increase space above any link underlines that may be present in the caption
-  & a:any-link {
+  & a {
     background-position: $link-inset-length 94%;
   }
 }
