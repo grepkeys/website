@@ -1,8 +1,54 @@
-<nav id="nav">
-  <ul>
-    <li><a id="navtitle" href="/">{{ .Site.Title }}</a></li>
-    {{ range where .Site.Pages.ByTitle "Type" "main" }}
-      <li><a href="{{ .Permalink }}">{{ .Title }}</a>
+<nav>
+  <p><a id="navlogo" href="/">{{ .Site.Title }}</a></p>
+
+  <ul id="navlinks">
+    {{ range where .Site.Pages "Type" "main" }}
+      <li >
+        <!-- Check if the page that is current being looped through is the -->
+        <!-- same as or belongs to the same section as the current page. We -->
+        <!-- have to check both section and path because top-level pages, -->
+        <!-- such as Contact and About, do not belong to any section, but -->
+        <!-- pages part of a section do not have the same path as their -->
+        <!-- corresponding list page. -->
+        <a
+          href="{{ .Permalink }}"
+
+          {{ .Scratch.Add "id1" "" }}
+          {{ .Scratch.Add "id2" "" }}
+          {{ if eq $.Section "" }}
+            {{ .Scratch.Set "id1" .Path }}
+            {{ .Scratch.Set "id2" $.Path }}
+          {{ else }}
+            {{ .Scratch.Set "id1" .Section }}
+            {{ .Scratch.Set "id2" $.Section }}
+          {{ end }}
+          {{ if eq (.Scratch.Get "id1") (.Scratch.Get "id2") }}
+            id="navthispage"
+          {{ end }}
+        >
+          {{ .Title }}
+        </a>
+      </li>
     {{ end }}
   </ul>
+
+  <div id="navpageinfo" style="visibility: hidden; opacity: 0">
+    {{ if ne .Section "" }}
+      {{ if .IsPage }}
+        <a href="{{ (.Site.GetPage .Section).Permalink }}">
+          {{ title .Section }}
+        </a>
+      {{ else }}
+        {{ title .Section }}
+      {{ end }}
+    {{ end }}
+
+    {{ if and (ne .Section "") (.IsPage) }}
+      <span id="navdivider">|</span>
+    {{ end }}
+
+    {{ if .IsPage }}
+      <span>{{ .Title }}</span>
+    {{ end }}
+  </div>
 </nav>

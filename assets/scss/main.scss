@@ -274,22 +274,27 @@ main a:any-link::selection {
 }
 
 //
-// Nav bar
+// Navbar
 //
 
-// Make sure nav bar always stays in one place -- at the top of the screen.
-// Offset it from the main content through a white background and a very light
-// shadow.
 nav {
+  // Make sure the navbar always stays in one place -- at the top of the screen.
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 99;
 
+  // Offset it from the main content through the use of a small sans, a white
+  // background that contrasts slightly with the site's light grey background,
+  // and a very light shadow.
   background-color: white;
-  padding: 0.5rem 0;
-  box-shadow: 0 2px 10px rgba($fg-color, .05);
+  font-family: $sans-fonts;
+  font-size: 0.85rem;
+  box-shadow: 0 2px 6px rgba($fg-color, 0.1);
+
+  // Ensure that all elements of the navbar are placed on one line
+  display: flex;
 
   // Transition to make autohide (from assets/js/main.js) animate smoothly
   //
@@ -298,51 +303,80 @@ nav {
   transition: top 200ms ease-out, box-shadow 300ms ease-out;
 }
 
-// Make nav bar sans serif to offset it from the body of the website
+// Give the navbar's content some room to breathe.
+// We save the horizontal padding as a variable as it is needed later.
+$navhpadding: 1rem;
 nav {
-  font-family: $sans-fonts;
+  padding: 0.6rem $navhpadding;
 }
 
-// Reuse textblock's code to make labels in nav bar align and resize in sync
-// with textblock
-nav ul {
-  @include textblock-positioning;
+#navlinks,
+#navpageinfo {
+  // Allow overlapping the navbar and 'titlebar', as only one of them is visible
+  // at any given point
+  position: absolute;
+
+  // Prevent wrapping
+  white-space: nowrap;
+
+  // Center across entire width navbar, so not including logo
+  left: 50%;
+  transform: translateX(-50%);
+
+  // Fade change between navbar and titlebar
+  transition: visibility 200ms linear, opacity 200ms linear;
+
+  // Undo centering and snap navbar content to right edge of screen if the
+  // viewport is too narrow to accomodate centering
+  @media all and (max-width: 37rem) {
+    left: unset;
+    right: $navhpadding;
+    transform: none;
+  }
 }
 
-// Collapse nav bar list items into one line
-//
-// The `- 0.25em` is there to remove the word space `inline-block` adds between
-// elements
-nav li {
+// Collapse navigational links into one line
+#navlinks {
+  display: flex;
+  list-style-type: none;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+// Add some space between nav links
+#navlinks li + li {
+  margin-left: 1em;
+}
+
+// Fade any and all links inside the navbar, making them fully coloured and
+// nudging them up slightly on hover
+nav a {
   display: inline-block;
-  margin-right: calc(1rem - 0.25em);
-}
-
-// Fade nav bar items, but make them fully coloured on hover
-nav li a {
   color: rgba($fg-color, 0.5);
-  text-decoration: none;
-  transition: color 250ms ease-out;
+  transition: color 250ms ease-out, transform 250ms ease-out;
 }
-nav li a:hover {
+nav a:hover {
+  transform: translateY(-2px);
   color: $fg-color;
 }
 
-// Nudge each nav bar item up slightly upon hover
-nav li {
-  transition: transform 250ms ease-out;
+// Make GrepKeys logo green on hover and black otherwise to offset it from other
+// navbar elements
+#navlogo {
+  color: $fg-color;
 }
-nav li:hover {
-  transform: translateY(-2px);
+#navlogo:hover {
+  color: $lime;
 }
 
-// Make the link to the website's homepage more prominent than the other nav
-// bar's links by fading it less, and making it green upon hover
-#navtitle {
-  color: rgba($fg-color, 0.8);
+// Make the current page you are on more prominent by not fading it
+#navthispage {
+  color: $fg-color;
 }
-#navtitle:hover {
-  color: $lime;
+
+// Fade divider between navbar section and title to make it less prominent
+#navdivider {
+  color: rgba($fg-color, 0.1);
 }
 
 //
