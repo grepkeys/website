@@ -78,9 +78,9 @@
       <!--   /content/keyboards/applewirelesskeyboard.md -->
       <!-- is -->
       <!--   /assets/vid/applewirelesskeyboard.mp4 -->
-      <figure>
-        {{ $path := (printf "vid/%s.mp4" .File.BaseFileName) }}
-        {{ if fileExists (printf "/assets/%s" $path) }}
+      {{ $path := (printf "vid/%s.mp4" .File.BaseFileName) }}
+      {{ if fileExists (printf "/assets/%s" $path) }}
+        <figure>
           {{ $vid := resources.Get $path }}
           <video controls>
             <source src="{{ $vid.Permalink }}" type="video/mp4">
@@ -140,8 +140,8 @@
               {{ end }}
             </figcaption>
           {{ end }}
-        {{ end }}
-      </figure>
+        </figure>
+      {{ end }}
 
       <!-- Footnote from 'Buy now' button. See above ^ -->
       {{ if isset .Params "condition" }}
