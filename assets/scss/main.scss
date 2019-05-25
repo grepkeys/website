@@ -200,7 +200,7 @@ main a {
    -2px    0 0 $bg-color,
     2px    0 0 $bg-color;
 
-  background-image: linear-gradient(to right, $fg-color 0%, $fg-color 100%);
+  background-image: linear-gradient($fg-color, $fg-color);
   background-size: calc(100% - #{$link-inset-length} * 2) 1px;
   background-repeat: no-repeat;
   background-position: $link-inset-length 92%;
