@@ -12,6 +12,12 @@ switches:
         - cherry-red
         - cherry-green
         - cherry-silentred
+    -
+        name: "Razer"
+        switches:
+        - razer-green
+        - razer-orange
+        - razer-yellow
 ---
 
 - Great build quality
@@ -24,6 +30,8 @@ The Ducky One 2 Series is a series of keyboards from the popular brand [Ducky](h
 
 All of the keyboards in the Ducky One 2 series come with PBT Doubleshot keycaps for enhanced durability over typical ABS keycaps. PBT feels much nicer to the touch than ABS, picks up oil less easily and is more durable. 'Doubleshot' means that the legend of each keycap is made from a separate piece of plastic, making fading impossible. In terms of nice touches, all keyboards in the range include a wire keycap puller in the box, while only RGB models come with extra keycaps for enter, WASD, escape and spacebar.
 
+This keyboard is a part of Ducky's crossover with Razer. The Ducky One 2 is available in a special Razer edition that changes the bottom half of the keyboard's casing to be lime green and the keyboard comes with 10 green keycaps instead of the randomly coloured ones. It is through this edition of the Ducky One 2 that the keyboard can be obtained with Razer's exclusive switches and this is the only way to obtain Razer's switches on a board not made by them without desoldering switches from a Razer board.
+
 Models with backlighting come with LEDs embedded in the PCB, with clear switch housings for the lights to shine through.
 
-The purchase link we've supplied has all of the Ducky One 2 keyboards with all their switch types.
+The purchase link we've supplied has all of the Ducky One 2 keyboards with all their switch types excluding the Razer edition and Razer switches.
