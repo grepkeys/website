@@ -1,6 +1,9 @@
 ---
 title: "Razer Green"
 short_name: "Green"
+video_author: "Brainbean"
+video_kb: "Ducky One 2 Razer Edition"
+video_kb_slug: "ducky-one-2"
 ---
 
 The Razer Green is a switch that was designed by Razer and is exclusive to their own boards. The Razer Green switch is essentially just a slightly worse [Cherry MX Blue](/switches/cherry-blue/). This switch keeps the distinct clicky noise of the MX Blue but loses the tactility. People who have used this switch report the bump as feeling like the [Cherry MX Brown's](/switches/cherry-brown) bump. 
