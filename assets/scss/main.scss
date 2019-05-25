@@ -576,7 +576,7 @@ figcaption {
   margin-top: 0.5rem;
 
   // Increase space above any link underlines that may be present in the caption
-  & a {
+  a {
     background-position: $link-inset-length 94%;
   }
 }
