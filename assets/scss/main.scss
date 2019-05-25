@@ -383,6 +383,9 @@ nav a:hover {
   display: grid;
   align-content: center;
   height: 100vh;
+
+  // This is needed to cancel the styling added for the sticky footer
+  grid-template-rows: initial;
 }
 
 // Use larger font for greeting on homepage to counteract large amount of
@@ -672,26 +675,23 @@ main ul li:before {
 // Other elements
 //
 
-// Subtle copyright notice that dynamically adjusts the space above it for the
-// screen size.
-//
-// We use flex to add one third of the viewport's height to the bottom of the
-// page, and then position the footer _inside_ this added space. We also remove
-// the margin usually added to the bottom of the page, instead moving the footer
-// up into the third-viewport space.
+// Subtle copyright notice that stays at the bottom of the viewport if the
+// content above it doesn't fill the entire viewport, and otherwise has a little
+// bit of space above it that dynamically adjusts based on the viewport height.
 //
 // The shadow and letterspacing are used to simulate optical sizes
+body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
 footer {
-  display: flex;
+  margin-top: calc(1rem + 10vh);
+  margin-bottom: 1rem;
+
   font-size: 0.6rem;
-  height: 33vh;
-  margin-bottom: -1rem;
   text-shadow: transparent 0px 0px 0px, $fg-color 0px 0px 0px;
   letter-spacing: 0.04em;
-}
-footer p {
-  align-self: flex-end;
-  padding-bottom: 1rem;
 }
 
 // Divider
