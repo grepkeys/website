@@ -103,6 +103,12 @@ html {
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
+// Remove highlighti colour that appears when you tap elements on mobile
+// browsers
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
 // Always use all basic font features, plus proportional text figures to make
 // numbers blend into the text
 body {
