@@ -21,11 +21,12 @@ html {
   font-size: 19px;
 }
 
-// Smaller font size on mobile devices
+// Smaller font sizes on mobile devices
 @media all and (max-width: 560px) {
-  html {
-    font-size: 17px;
-  }
+  html { font-size: 17px; }
+}
+@media all and (max-width: 360px) {
+  html { font-size: 14px; }
 }
 
 // Keep the textblock at a reasonable line length in the center of the screen,
