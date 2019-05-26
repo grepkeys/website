@@ -562,17 +562,20 @@ video {
 }
 
 // Make image captions less obtrusive and offset them from the rest of the text
+$caption-color: rgba($fg-color, 0.9);
 figcaption {
   font-family: $sans-fonts;
   font-size: 0.8rem;
   text-align: center;
-  color: rgba($fg-color, 0.9);
+  color: $caption-color;
 
   // Reduce space between image and caption
   margin-top: 0.5rem;
 
-  // Increase space above any link underlines that may be present in the caption
+  // Increase space above any link underlines that may be present in the
+  // caption, and make the underlines' colour consistent with the caption.
   a {
+    background-image: linear-gradient($caption-color, $caption-color);
     background-position: $link-inset-length 94%;
   }
 }
