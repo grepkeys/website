@@ -189,14 +189,14 @@ a:active {
 $link-inset-length: 0.05em;
 main a {
   text-shadow:
-   -1px -1px 0 $bg-color,
-    1px -1px 0 $bg-color,
-   -1px  1px 0 $bg-color,
-    1px  1px 0 $bg-color,
-   -2px    0 0 $bg-color,
-    2px    0 0 $bg-color,
-   -2px    0 0 $bg-color,
-    2px    0 0 $bg-color;
+   -0.05em -0.05em 0 $bg-color,
+    0.05em -0.05em 0 $bg-color,
+   -0.05em  0.05em 0 $bg-color,
+    0.05em  0.05em 0 $bg-color,
+   -0.1em   0      0 $bg-color,
+    0.1em   0      0 $bg-color,
+   -0.1em   0      0 $bg-color,
+    0.1em   0      0 $bg-color;
 
   background-image: linear-gradient($fg-color, $fg-color);
   background-size: calc(100% - #{$link-inset-length} * 2) 1px;
