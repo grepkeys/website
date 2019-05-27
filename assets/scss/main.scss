@@ -683,7 +683,7 @@ main ul li:before {
 // content above it doesn't fill the entire viewport, and otherwise has a little
 // bit of space above it that dynamically adjusts based on the viewport height.
 //
-// The shadow and letterspacing are used to simulate optical sizes
+// The letterspacing is used to simulate optical sizing
 body {
   min-height: 100vh;
   display: grid;
@@ -694,7 +694,6 @@ footer {
   margin-bottom: 1rem;
 
   font-size: 0.6rem;
-  text-shadow: transparent 0px 0px 0px, $fg-color 0px 0px 0px;
   letter-spacing: 0.04em;
 }
 
