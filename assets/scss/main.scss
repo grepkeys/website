@@ -103,12 +103,6 @@ html {
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
-// Remove highlighti colour that appears when you tap elements on mobile
-// browsers
-html {
-  -webkit-tap-highlight-color: transparent;
-}
-
 // Always use all basic font features, plus proportional text figures to make
 // numbers blend into the text
 body {
@@ -697,8 +691,6 @@ footer {
   letter-spacing: 0.04em;
 }
 
-// Divider
-
 // Replace horizontal line element with three centered middots, spaced with en
 // quads
 hr {
@@ -714,8 +706,6 @@ hr:before {
     font-size: 1.5rem;
 }
 
-// Fullwidth
-
 // A div that spans the entire screen width
 .fullwidth {
   width: 100vw;
@@ -726,13 +716,27 @@ hr:before {
   margin-right: -50vw;
 }
 
-// Selections
+// Remove highlight colour that appears when you tap elements on mobile
+// browsers
+html {
+  -webkit-tap-highlight-color: transparent;
+}
 
+// Only allow selextions in <main>, the text part of the homepage, and finally
+// the site's title, since only here is any actual textual content -- everywhere
+// else is UI that does not need to be selected.
+body {
+  user-select: none;
+}
+main,
+.home {
+  user-select: text;
+}
+
+// Selections
 ::selection {
   background: rgba($brightlime, 0.15);
 }
-
-// Scroll bar
 
 // Always show scroll bar (prevents centering from changing from page to page)
 html {
