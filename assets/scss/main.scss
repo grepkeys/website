@@ -14,12 +14,12 @@
 // Layout
 //
 
-// Add 0.9 percent of the smaller dimension of the screen (i.e. width on a
-// laptop, height on a phone in portrait) to a constant amount, 11px, to get the
+// Add 0.8 percent of the smaller dimension of the screen (i.e. width on a
+// laptop, height on a phone in portrait) to a constant amount, 13px, to get the
 // font size. We are not sure _why_ exactly this works, but it works quite well
 // so deal with it.
 html {
-  font-size: calc(11px + 0.9vmin);
+  font-size: calc(13px + 0.8vmin);
 }
 
 // Keep the textblock at a reasonable line length in the center of the screen,
