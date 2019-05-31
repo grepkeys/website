@@ -14,13 +14,16 @@
 // Layout
 //
 
-// Add 0.8 percent of the smaller dimension of the screen (i.e. width on a
-// laptop, height on a phone in portrait) to a constant amount, 13px, to get the
-// font size. We are not sure _why_ exactly this works, but it works quite well
-// so deal with it.
-html {
-  font-size: calc(13px + 0.8vmin);
+html { font-size: 19px; }
+
+@media all and (max-width: 560px) {
+  html { font-size: 17px; }
 }
+
+@media all and (max-width: 360px) {
+  html { font-size: 15px; }
+}
+
 
 // Keep the textblock at a reasonable line length in the center of the screen,
 // and prevent it from being flush against the sides of the display on mobile.
