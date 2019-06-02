@@ -21,7 +21,7 @@
     ">
       {{ range .Pages }}
         <div class="card">
-          <a class="cardlink" href="{{ .Permalink }}">
+          <a href="{{ .Permalink }}"><div>
             <!-- Image format for e.g. -->
             <!--   /content/keyboards/applewirelesskeyboard.md -->
             <!-- is -->
@@ -34,7 +34,7 @@
             {{ end }}
 
             <p class="cardtitle">{{ .Title }}</p>
-          </a>
+          </div></a>
         </div>
       {{ end }}
     </div>

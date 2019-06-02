@@ -226,17 +226,18 @@ main a::selection {
   grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
 }
 
-// The lobotomised owl selector (* + *) adds some space between and inside cards
-// that we don't want, so zero all margins amongst cards
-.cards * {
-  margin: 0;
-}
-
 .card {
-  padding: 0.75rem;
   border: 1px solid rgba($fg-color, 0.1);
   border-radius: 4px;
   background-color: white;
+}
+
+// Add padding to each card. We do this by adding it to every direct child of
+// the link in the card, since the link or the div surrounding it cannot have
+// padding, as this makes it that the card is only clickable when the mouse is
+// over the card's content, rather than the entire card.
+.card a > * {
+  padding: 0.75rem;
 }
 
 // Add a light shadow to each card, which expands upon hover. The card also
