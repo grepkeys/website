@@ -503,11 +503,14 @@ nav a:hover {
 
 // Colour box palette
 .cherry-black     { background-color: #111111; }
-.cherry-blue      { background-color: #2a9cf9; }
-.cherry-brown     { background-color: #7c441e; }
+.cherry-blue,
+.gateron-blue     { background-color: #2a9cf9; }
+.cherry-brown,
+.gateron-brown    { background-color: #7c441e; }
 .cherry-clear     { background-color: #dddddd; }
 .cherry-green     { background-color: #54d04b; }
-.cherry-red       { background-color: #f7513a; }
+.cherry-red,
+.gateron-red      { background-color: #f7513a; }
 .cherry-silentred { background-color: #f58c8c; }
 .cherry-speed     { background-color: #b3b5b7; }
 .razer-green      { background-color: #71d112; }
