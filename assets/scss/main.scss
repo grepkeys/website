@@ -451,8 +451,6 @@ nav a:hover {
 // Style switches like cards on list pages, but with a less bright background
 .switch {
   display: inline-block;
-  padding: 0.2rem 0.4rem;
-  padding-top: 0.1rem;
   margin-right: 0.25rem;
   margin-bottom: 0.5rem;
 
@@ -463,6 +461,13 @@ nav a:hover {
   // text are also gently faded
   opacity: 0.8;
   background-color: rgba(white, 0.8);
+}
+
+// Use same trick as with cards on list pages to ensure you can click anywhere
+// on the switch
+.switch a > * {
+  padding: 0.4rem;
+  padding-bottom: 0.2rem;
 }
 
 // Shadow from list cards, but with added background colour and opacity

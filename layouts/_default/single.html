@@ -36,7 +36,7 @@
 
               {{ range $manufacturer.switches }}
                 {{ $switch := . }}
-                <div class="switch"><a href="/switches/{{ $switch }}">
+                <div class="switch"><a href="/switches/{{ $switch }}"><div>
                   <!-- Add class with switch name so that we can add switch- -->
                   <!-- specific colours later -->
                   <div class="switchcolourbox {{ $switch }}"></div>
@@ -48,7 +48,7 @@
                   {{ else }}
                     <p>{{ $page.Title }}</p>
                   {{ end }}
-                </a></div>
+                </div></a></div>
               {{ end }}
             </section>
           {{ end }}
