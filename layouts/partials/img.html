@@ -24,7 +24,8 @@
   >
     <img
       alt="{{ .alt }}"
-      src='{{ ($img.Resize .width).Permalink }}'
+      src="{{ ($img.Resize .width).Permalink }}"
+      loading="lazy"
     >
   </div>
 {{ end }}
