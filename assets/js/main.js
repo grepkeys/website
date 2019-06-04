@@ -9,36 +9,36 @@ window.onload = function() {
   var navbar      = document.querySelector('nav');
   var navpageinfo = document.querySelector('#navpageinfo');
   var navlinks    = document.querySelector('#navlinks');
-  var header      = document.querySelector('header');
+  var topSection  = document.querySelector('#topsection');
 
   // The title is the first element on the page (excluding the navbar), and the
-  // space above and below it is dynamic based on the viewport's height. As we
-  // want to switch from navbar to titlebar the moment the title has been
-  // scrolled offscreen, we need to get the calculated height and top margin of
-  // the title, which we do here. As this amount can change on resize, we
-  // calculate again on resize.
+  // space above and below its container, topSection, is dynamic based on the
+  // viewport's height. As we want to switch from navbar to titlebar the moment
+  // the title inside topSection has been scrolled offscreen, we need to get the
+  // calculated height and top margin of topSection, which we do here. As this
+  // amount can change on resize, we calculate again on resize.
   //
   // As 'scrolled away' means scrolled under the navbar, we take away the height
-  // of the navbar from the height of the title to account for this.
+  // of the navbar from the height of topSection to account for this.
 
   // Create vars here to make sure they are scoped to the rest of file.
-  var headerStyles;
-  var headerHeight;
-  function getHeaderHeight() {
-    headerStyles = window.getComputedStyle(header);
-    headerHeight =
-      header.offsetHeight +
-      parseFloat(headerStyles['marginTop']) -
+  var topSectionStyles;
+  var topSectionHeight;
+  function gettopSectionHeight() {
+    topSectionStyles = window.getComputedStyle(topSection);
+    topSectionHeight =
+      topSection.offsetHeight +
+      parseFloat(topSectionStyles['marginTop']) -
       navbar.offsetHeight;
   }
 
-  getHeaderHeight();
+  gettopSectionHeight();
   window.onresize = function() {
-    getHeaderHeight();
+    gettopSectionHeight();
   }
 
   function switchNavbar() {
-    if (window.scrollY > headerHeight){
+    if (window.scrollY > topSectionHeight) {
       navlinks.style.visibility = 'hidden';
       navlinks.style.opacity = 0;
       navpageinfo.style.visibility = 'visible';

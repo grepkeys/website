@@ -7,7 +7,7 @@
   <body>
     {{ partial "nav" . }}
 
-    <header>
+    <div id="topsection">
       <!-- 'Buy now' button that links to a page to purchase the article's -->
       <!-- product. If applicable, it links to a footnote describing the -->
       <!-- linked product's condition. -->
@@ -20,8 +20,9 @@
         </p>
       {{ end }}
 
-      <span>{{ .Title }}</span>
-    </header>
+      <header id="title">{{ .Title }}</header>
+    </div>
+    <header>
 
     <!-- A list of switches the keyboard is available with -->
     {{ if isset .Params "switches" }}

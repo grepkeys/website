@@ -142,7 +142,7 @@ h2 {
 
 // The title of the current page
 
-header span {
+#title {
   // As the fonts we use do not have optical sizes, we compensate as best as we
   // can by slightly reducing letter spacing
   letter-spacing: -0.01rem;
@@ -152,7 +152,7 @@ header span {
 // Add some space above and below to make the page less cramped and to emphasise
 // the title more. This space reduces very quicly when the viewport's height is
 // reduced.
-header {
+#topsection {
   margin-top: calc(2.5rem + 10vh);
   margin-bottom: calc(0.5rem + 5vh);
 }
@@ -618,7 +618,7 @@ figcaption {
   @include strong-shadow;
 }
 
-// Slot in next to header
+// Slot in next to title
 //
 // The margin makes sure wrapping occurs a little before the text juts against
 // the button's edge
@@ -626,7 +626,7 @@ figcaption {
   float: right;
   margin-left: 0.7rem;
 }
-header span {
+#title {
   display: inline;
 }
 
