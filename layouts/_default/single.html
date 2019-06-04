@@ -26,13 +26,13 @@
     <!-- A list of switches the keyboard is available with -->
     {{ if isset .Params "switches" }}
       <section class="switches">
-        <p>Available with:</p>
+        <header>Available with:</header>
           {{ range .Params.switches }}
             <section>
               {{ $manufacturer := . }}
 
               <!-- Group switches by manufacturer -->
-              <p class="manufacturer">{{ .name }}</p>
+              <header class="manufacturer">{{ .name }}</header>
 
               {{ range $manufacturer.switches }}
                 {{ $switch := . }}
