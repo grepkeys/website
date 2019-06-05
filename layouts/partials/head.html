@@ -10,6 +10,7 @@
 
 {{ $js := resources.Get "js/main.js" | resources.Minify | fingerprint }}
 
-<script src="{{ $js.Permalink }}"
+<script defer
+        src="{{ $js.Permalink }}"
         integrity="{{ $js.Data.Integrity }}">
 </script>
