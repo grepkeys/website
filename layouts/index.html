@@ -4,7 +4,9 @@
     {{ partial "head" . }}
     {{ partial "title" . }}
   </head>
-  <body class="home">
+
+  {{ $img := resources.Get "img/wallpaper.jpg" }}
+  <body class="home" style="background-image: url('{{ ($img.Resize "512x").Permalink }}')">
     {{ partial "nav" . }}
 
     <div id="greeting">

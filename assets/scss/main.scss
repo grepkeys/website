@@ -417,6 +417,26 @@ nav a:hover {
   color: rgba($lime, 0.5);
 }
 
+// Ensure background image on homepage is centred and covers the entire viewport
+.home {
+  background-size: cover;
+  background-position: center;
+}
+
+// Make this background image much less obtrusive by covering it with a
+// high-opacity field the same colour as the background on other pages
+.home:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.9;
+  z-index: -1;
+  background-color: $bg-color;
+}
+
 //
 // List of switches
 //
