@@ -36,4 +36,4 @@ Another large selling point for the Anne Pro 2 is the large variety of switches 
 
 When buying an Anne Pro 2, inside the box, you will receive a cable to connect the keyboard, a wired keycap puller, a variety of coloured keycaps without a legend printed on, a manual and, of course, the keyboard itself.
 
-Overall, the Anne Pro 2 is a great keyboard. Either this or a Ducky keyboard are the best ways to begin your descent into the mechanical keyboard rabbit hole. This keyboard has every feature you need from a keyboard whilst being priced fairly unlike the "gaming" keyboards from brands such as Corsair and Razer.
+Overall, the Anne Pro 2 is a great keyboard. Either this or a Ducky keyboard are the best ways to begin your descent into the mechanical keyboard rabbit hole. This keyboard has every feature you need from a keyboard whilst being priced fairly unlike the 'gaming' keyboards from brands such as Corsair and Razer.
