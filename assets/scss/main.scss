@@ -280,10 +280,10 @@ nav {
   width: 100%;
   z-index: 99;
 
-  // Offset it from the main content through the use of a smaller typeface, a
-  // white background that contrasts slightly with the site's light grey
-  // background, and a very light shadow.
-  background-color: white;
+  // Offset it from the main content through the use of a smaller typeface, an
+  // almost-opaque white background that contrasts slightly with the site's
+  // light grey background, and a very light shadow.
+  background-color: rgba(white, 0.97);
   font-size: 0.85rem;
   box-shadow: 0 0 10px rgba($fg-color, 0.1);
 
