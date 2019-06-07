@@ -26,6 +26,7 @@ switches:
 - One the most popular prebuilt keyboards currently
 - Wireless
 - Only available with 60% sizes
+
 ---
 
 The Anne Pro 2 is a keyboard by Obinslab that has quickly grown to become one of the most popular keyboards for enthusiasts that haven't yet built their own custom keyboard and is rivalling the [Ducky One 2 Mini](/keyboards/ducky-one-2) in popularity due to them both filling a similar niche. 
