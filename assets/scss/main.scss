@@ -227,17 +227,13 @@ main a::selection {
 }
 
 .card {
+  padding: 0.75rem;
   border: 1px solid rgba($fg-color, 0.1);
   border-radius: 4px;
   background-color: white;
-}
 
-// Add padding to each card. We do this by adding it to every direct child of
-// the link in the card, since the link or the div surrounding it cannot have
-// padding, as this makes it that the card is only clickable when the mouse is
-// over the card's content, rather than the entire card.
-.card a > * {
-  padding: 0.75rem;
+  // Ensure card takes up all the space it can to form a neat grid
+  height: 100%;
 }
 
 // Add a light shadow to each card, which expands upon hover. The card also
@@ -473,6 +469,8 @@ nav a:hover {
   display: inline-block;
   margin-right: 0.25rem;
   margin-bottom: 0.5rem;
+  padding: 0.4rem;
+  padding-bottom: 0.2rem;
 
   border: 1px solid rgba($fg-color, 0.1);
   border-radius: 3px;
@@ -481,13 +479,6 @@ nav a:hover {
   // text are also gently faded
   opacity: 0.8;
   background-color: rgba(white, 0.8);
-}
-
-// Use same trick as with cards on list pages to ensure you can click anywhere
-// on the switch
-.switch a > * {
-  padding: 0.4rem;
-  padding-bottom: 0.2rem;
 }
 
 // Shadow from list cards, but with added background colour and opacity
@@ -516,7 +507,7 @@ nav a:hover {
 }
 
 // Use a small font for switch labels to make them less obtrusive
-.switch a {
+.switch {
   font-size: 0.7rem;
 }
 
