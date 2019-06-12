@@ -1,6 +1,7 @@
 ---
 title: "About"
 type: "main"
+weight: 3
 ---
 
 Hello and welcome to GrepKeys. This website has been set up to help inform you about keyboards in an effort to assist you with buying your first keyboard. Each keyboard page contains a description of the features of the keyboard, the available switches, a sound test and a link to the place we recommend purchasing the keyboard.
