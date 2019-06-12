@@ -742,10 +742,11 @@ hr:before {
   margin-right: -50vw;
 }
 
-// Remove highlight colour that appears when you tap elements on mobile
-// browsers
+// Make the highlight that appears when you tap elements on mobile browsers a
+// very transparent dark grey to make it less obtrusive than the bright blue
+// default.
 html {
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba($fg-color, 0.1);
 }
 
 // Only allow selextions in <main>, the text part of the homepage, and finally
