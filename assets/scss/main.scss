@@ -195,7 +195,7 @@ main a {
    -0.1em   0      0 $bg-color,
     0.1em   0      0 $bg-color;
 
-  background-image: linear-gradient($fg-color, $fg-color);
+  background-image: linear-gradient(currentColor, currentColor);
   background-size: calc(100% - #{$link-inset-length} * 2) 1px;
   background-repeat: no-repeat;
   background-position: $link-inset-length 92%;
@@ -596,9 +596,9 @@ figcaption {
   margin-top: 0.5rem;
 
   // Increase space above any link underlines that may be present in the
-  // caption, and make the underlines' colour consistent with the caption.
+  // caption to make them easier to see, since the underline can start to blend
+  // with the text at such small sizes.
   a {
-    background-image: linear-gradient($caption-color, $caption-color);
     background-position: $link-inset-length 94%;
   }
 }
