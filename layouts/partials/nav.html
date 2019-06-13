@@ -10,10 +10,6 @@
         <!-- such as Contact and About, do not belong to any section, but -->
         <!-- pages part of a section do not have the same path as their -->
         <!-- corresponding list page. -->
-        <!-- -->
-        <!-- We use a locally scoped scratchpad and delete the values at the -->
-        <!-- end to prevent leakage, which caused a bug in the past where -->
-        <!-- random pages had mismatched current page highlighting. -->
         {{ $scratch := newScratch }}
         {{ $scratch.Add "id1" "" }}
         {{ $scratch.Add "id2" "" }}
