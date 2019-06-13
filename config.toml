@@ -2,6 +2,9 @@ baseURL = "https://grepkeys.github.io/"
 languageCode = "en-uk"
 title = "GrepKeys"
 
+# Allow hooking into Git information -- used to get last modified date of file
+EnableGitInfo = true
+
 [author]
   name = "GrepKeys"
 
