@@ -27,27 +27,19 @@
         <!-- page's title -->
         {{ dateFormat "2 January 2006" (.Page.Lastmod) }}
 
-        ·
-
         <!-- Display the time to read the article after a separator -->
         <!-- -->
         <!-- This is calculated by dividing the word count of the article by -->
         <!-- the average reading speed, 200 words per minute. If the time to -->
-        <!-- read the article is less than two minutes the time to read -->
-        <!-- changes into seconds. Finally, the rounded reading time is -->
-        <!-- displayed, along with the units it is in. -->
+        <!-- read the article is less than thirty secondds it isn't shown at -->
+        <!-- all. -->
         {{ $reading_speed := 200.0 }}
         {{ $scratch := newScratch }}
         {{ $scratch.Set "reading_time" (div .WordCount $reading_speed) }}
-        {{ $scratch.Set "reading_time_units" "minute" }}
 
-        {{ if lt ($scratch.Get "reading_time") 2 }}
-          {{ $scratch.Set "reading_time" (div .WordCount (div $reading_speed 60)) }}
-          {{ $scratch.Set "reading_time_units" "second" }}
+        {{ if gt ($scratch.Get "reading_time") 0.5 }}
+          · {{ math.Round ($scratch.Get "reading_time") }} minute read
         {{ end }}
-
-        {{ math.Round ($scratch.Get "reading_time") }}
-        {{ $scratch.Get "reading_time_units" }} read
       </p>
     </div>
 
