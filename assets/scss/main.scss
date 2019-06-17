@@ -259,9 +259,12 @@ main a::selection {
   transform: translateY(-3px);
 }
 
-// Slightly larger (than body text) font for the title of each card
+// Slightly larger (than body text) font for the title of each card because
+// normal-size text looks strange all by itself. Also add a touch of space above
+// each card title to prevent cramping.
 .cardtitle {
   font-size: 1.1rem;
+  margin-top: 0.5rem;
 }
 
 //
