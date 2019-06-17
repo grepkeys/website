@@ -142,7 +142,7 @@ h2 {
 
 // The title of the current page
 
-#title {
+.title {
   // As the fonts we use do not have optical sizes, we compensate as best as we
   // can by slightly reducing letter spacing
   letter-spacing: -0.01rem;
@@ -152,7 +152,7 @@ h2 {
 // Add some space above and below to make the page less cramped and to emphasise
 // the title more. This space reduces very quicly when the viewport's height is
 // reduced.
-#topsection {
+.topsection {
   margin-top: calc(2.5rem + 10vh);
   margin-bottom: calc(0.5rem + 5vh);
 }
@@ -298,8 +298,8 @@ nav {
   transition: top 200ms ease-out, box-shadow 300ms ease-out;
 }
 
-#navlinks,
-#navpageinfo {
+.navlinks,
+.navpageinfo {
   // Allow overlapping the navbar and 'titlebar', as only one of them is visible
   // at any given point
   position: absolute;
@@ -325,7 +325,7 @@ nav {
 }
 
 // Collapse navigational links into one line
-#navlinks {
+.navlinks {
   display: flex;
   list-style-type: none;
   flex-direction: row;
@@ -333,7 +333,7 @@ nav {
 }
 
 // Add some space between nav links
-#navlinks li + li {
+.navlinks li + li {
   margin-left: 1em;
 }
 
@@ -351,20 +351,20 @@ nav a:hover {
 
 // Make GrepKeys logo green on hover and black otherwise to offset it from other
 // navbar elements
-#navlogo {
+.navlogo {
   color: $fg-color;
 }
-#navlogo:hover {
+.navlogo:hover {
   color: $lime;
 }
 
 // Make the current page you are on more prominent by not fading it
-#navthispage {
+.navthispage {
   color: $fg-color;
 }
 
 // Fade divider between navbar section and title to make it less prominent
-#navdivider {
+.navdivider {
   color: rgba($fg-color, 0.1);
 }
 
@@ -382,34 +382,34 @@ nav a:hover {
 // Use larger font for greeting on homepage to counteract large amount of
 // whitespace, and use serif to convey the main 'identity' of GrepKeys right
 // from the start.
-#greeting {
+.greeting {
   font-family: $serif-fonts;
   font-size: 1.3rem;
 }
 
 // Make the main 'Hi' greeting larger than the surrounding text to give it more
 // importance
-#bighi {
+.bighi {
   font-size: 1.5rem;
 }
 
 // Reduce space between 'Hi' and rest of greeting
-#bighi + p {
+.bighi + p {
   margin-top: 0.5rem;
 }
 
 // Make the links on the homepage lime-green and add a slightly rounded green
 // highlight upon hover.
-#greeting a {
+.greeting a {
   color: $lime;
   border-radius: 3px;
   transition: background-color 500ms cubic-bezier(0, 0, 0.33, 1);
   padding: 0.2em 0;
 }
-#greeting a:hover {
+.greeting a:hover {
   background-color: rgba($brightlime, 0.2);
 }
-#greeting a:active {
+.greeting a:active {
   color: rgba($lime, 0.5);
 }
 
@@ -637,7 +637,7 @@ figcaption {
   float: right;
   margin-left: 0.7rem;
 }
-#title {
+.title {
   display: inline;
 }
 
@@ -756,7 +756,7 @@ body {
   user-select: none;
 }
 main,
-#greeting {
+.greeting {
   user-select: text;
 }
 

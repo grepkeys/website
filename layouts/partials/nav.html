@@ -1,7 +1,7 @@
 <nav>
-  <p><a id="navlogo" href="/">{{ .Site.Title }}</a></p>
+  <p><a class="navlogo" href="/">{{ .Site.Title }}</a></p>
 
-  <ul id="navlinks">
+  <ul class="navlinks">
     {{ range where .Site.Pages "Type" "main" }}
       <li >
         <!-- Check if the page that is current being looped through is the -->
@@ -24,7 +24,7 @@
           href="{{ .Permalink }}"
 
           {{ if eq ($scratch.Get "id1") ($scratch.Get "id2") }}
-            id="navthispage"
+            class="navthispage"
           {{ end }}
         >
           {{ .Title }}
@@ -35,7 +35,7 @@
     {{ end }}
   </ul>
 
-  <div id="navpageinfo" style="visibility: hidden; opacity: 0">
+  <div class="navpageinfo" style="visibility: hidden; opacity: 0">
     {{ if ne .Section "" }}
       {{ if .IsPage }}
         <a href="{{ (.Site.GetPage .Section).Permalink }}">
@@ -47,7 +47,7 @@
     {{ end }}
 
     {{ if and (ne .Section "") (.IsPage) }}
-      <span id="navdivider">|</span>
+      <span class="navdivider">|</span>
     {{ end }}
 
     {{ if .IsPage }}

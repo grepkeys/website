@@ -7,7 +7,7 @@
   <body>
     {{ partial "nav" . }}
 
-    <div id="topsection">
+    <div class="topsection">
       <!-- 'Buy now' button that links to a page to purchase the article's -->
       <!-- product. If applicable, it links to a footnote describing the -->
       <!-- linked product's condition. -->
@@ -20,7 +20,7 @@
         </p>
       {{ end }}
 
-      <header id="title">{{ .Title }}</header>
+      <header class="title">{{ .Title }}</header>
 
       <p>
         <!-- Show the last modified date in Australian format underneath the -->
@@ -165,7 +165,7 @@
 
       <!-- Footnote from 'Buy now' button. See above ^ -->
       {{ if isset .Params "condition" }}
-        <p id="condition">*only available {{ .Params.condition }}</p>
+        <p class="condition">*only available {{ .Params.condition }}</p>
       {{ end }}
     </main>
 

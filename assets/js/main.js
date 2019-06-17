@@ -7,9 +7,9 @@ window.onload = function() {
   // viewport
 
   var navbar      = document.querySelector('nav');
-  var navpageinfo = document.querySelector('#navpageinfo');
-  var navlinks    = document.querySelector('#navlinks');
-  var topSection  = document.querySelector('#topsection');
+  var navpageinfo = document.querySelector('.navpageinfo');
+  var navlinks    = document.querySelector('.navlinks');
+  var topSection  = document.querySelector('.topsection');
 
   // The title is the first element on the page (excluding the navbar), and the
   // space above and below its container, topSection, is dynamic based on the
