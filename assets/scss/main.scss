@@ -712,7 +712,7 @@ footer {
   // We use padding to add the minimum space above the footer so that it does
   // not interfere with margin-top: auto
   padding-top: calc(1rem + 15vh);
-  margin-bottom: 1rem;
+  padding-bottom: 1rem;
   margin-top: auto;
 
   font-size: 0.6rem;
