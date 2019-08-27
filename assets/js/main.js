@@ -94,7 +94,7 @@ window.onload = function() {
     // require a little speed to get the navbar back
     if (scrollPosDiff > 1) {
       hideNavbar();
-    } else if (scrollPosDiff < -5) {
+    } else if (scrollPosDiff < -1) {
       showNavbar();
     }
 
