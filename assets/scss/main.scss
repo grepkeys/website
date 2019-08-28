@@ -41,11 +41,12 @@ body {
 
 // Colours
 
-$fg-color:   #333333;
-$bg-color:   #fdfdfd;
+$fg-color:        #333333;
+$bg-color:        #fdfdfd;
+$bg-accent-color: lighten($bg-color, 3%);
 // ---
-$lime:       #00af8b;
-$brightlime: #00ffca;
+$lime:            #00af8b;
+$brightlime:      #00ffca;
 
 // Fonts
 
@@ -200,8 +201,10 @@ main a {
   background-position: $link-inset-length 92%;
 }
 
-// Remove descender avoidance on selection because it looks very strange to have
-// a white shadow around links.
+// Remove descender avoidance on selection because it is not possible to set the
+// descender avoidance shadows to the selection colour. This is because the
+// selection colour has a non-one opacity, meaning that where the selection and
+// the shadow overlap a darkening woud occur.
 main a::selection {
   text-shadow: none;
 }
@@ -229,7 +232,7 @@ main a::selection {
   padding: 0.75rem;
   border: 1px solid rgba($fg-color, 0.1);
   border-radius: 4px;
-  background-color: white;
+  background-color: $bg-accent-color;
 
   // Ensure card takes up all the space it can to form a neat grid
   height: 100%;
@@ -242,11 +245,11 @@ main a::selection {
 // We reuse these shadows later, so we put them into mixins.
 
 @mixin light-shadow {
-  box-shadow: 0 1px 4px rgba($fg-color, .08);
+  box-shadow: 0 1px 4px rgba(black, .08);
 }
 
 @mixin strong-shadow {
-  box-shadow: 0 4px 9px rgba($fg-color, .1);
+  box-shadow: 0 4px 9px rgba(black, .1);
 }
 
 .card {
@@ -281,9 +284,9 @@ nav {
   // Offset it from the main content through the use of a smaller typeface, an
   // almost-opaque white background that contrasts slightly with the site's
   // light grey background, and a very light shadow.
-  background-color: rgba(white, 0.97);
   font-size: 0.85rem;
-  box-shadow: 0 -2px 15px rgba($fg-color, 0.1);
+  background-color: rgba($bg-accent-color, 0.8);
+  box-shadow: 0 -2px 15px rgba(black, 0.1);
 
   // Ensure that all elements of the navbar are placed on one line
   display: flex;
@@ -480,7 +483,7 @@ nav a:hover {
   // We use both opacity and background-color to make sure the colour boxes and
   // text are also gently faded
   opacity: 0.8;
-  background-color: rgba(white, 0.8);
+  background-color: rgba($bg-accent-color, 0.8);
 }
 
 // Shadow from list cards, but with added background colour and opacity
@@ -493,7 +496,7 @@ nav a:hover {
 }
 .switch:hover {
   @include strong-shadow;
-  background-color: white;
+  background-color: $bg-accent-color;
   opacity: 1;
 }
 
