@@ -281,11 +281,12 @@ nav {
   width: 100%;
   z-index: 99;
 
-  // Offset it from the main content through the use of a smaller typeface, an
-  // almost-opaque white background that contrasts slightly with the site's
-  // light grey background, and a very light shadow.
+  // Offset it from the main content through the use of a smaller typeface, a
+  // frosted glass-style accented background that contrasts slightly with the
+  // site's light grey background, and a very light shadow.
   font-size: 0.85rem;
   background-color: rgba($bg-accent-color, 0.8);
+  backdrop-filter: blur(25px) saturate(2);
   box-shadow: 0 -2px 15px rgba(black, 0.1);
 
   // Ensure that all elements of the navbar are placed on one line
