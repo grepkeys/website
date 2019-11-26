@@ -8,7 +8,7 @@
 }
 
 // Get webfonts
-@import "fonts";
+@import 'fonts';
 
 //
 // Layout
@@ -54,19 +54,19 @@ $sys-fonts:
   system-ui,
   -apple-system,
   BlinkMacSystemFont,
-  "Segoe UI",
-  "Roboto",
-  "Oxygen-Sans",
-  "Ubuntu",
-  "Cantarell",
-  "Lucida Grande",
-  "Helvetica Neue",
+  'Segoe UI',
+  'Roboto',
+  'Oxygen-Sans',
+  'Ubuntu',
+  'Cantarell',
+  'Lucida Grande',
+  'Helvetica Neue',
   Helvetica,
   arial,
   sans-serif,
-  "Apple Color Emoji",
-  "Segoe UI Emoji",
-  "Segoe UI Symbol";
+  'Apple Color Emoji',
+  'Segoe UI Emoji',
+  'Segoe UI Symbol';
 
 $serif-fonts: ff-more, $sys-fonts;
 $sans-fonts: ff-nuvo, $serif-fonts;
@@ -428,7 +428,7 @@ nav a:hover {
 // Make this background image much less obtrusive by covering it with a
 // high-opacity field the same colour as the background on other pages
 .home:before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
