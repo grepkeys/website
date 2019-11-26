@@ -245,11 +245,11 @@ main a::selection {
 // We reuse these shadows later, so we put them into mixins.
 
 @mixin light-shadow {
-  box-shadow: 0 1px 4px rgba(black, .08);
+  box-shadow: 0 1px 14px rgba(black, .05);
 }
 
 @mixin strong-shadow {
-  box-shadow: 0 4px 9px rgba(black, .1);
+  box-shadow: 0 5px 21px rgba(black, .15);
 }
 
 .card {
@@ -258,7 +258,7 @@ main a::selection {
 }
 .card:hover {
   @include strong-shadow;
-  transform: translateY(-3px);
+  transform: translateY(-4px);
 }
 
 // Slightly larger (than body text) font for the title of each card because
