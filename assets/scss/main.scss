@@ -106,11 +106,9 @@ html {
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
-// Always use all basic font features, plus proportional text figures to make
-// numbers blend into the text
+// Ensure the usage of basic OpenType features.
 body {
   font-variant-ligatures: common-ligatures contextual;
-  font-variant-numeric: oldstyle-nums proportional-nums;
   font-kerning: normal;
 }
 
@@ -683,19 +681,14 @@ main li:before {
   color: rgba($fg-color, 0.9);
 }
 
-// Use tabular text figures for ordered list labels to make sure the numbers all
-// line up in a neat column. Additionally, we remove the full stop after each
-// list item as it is not needed -- whitespace is enough.
+// Remove the full stop after each list item label as it is not needed --
+// whitespace is enough to separate the label from the text.
 main ol li:before {
   content: counter(listcounter);
-  font-variant-numeric: oldstyle-nums tabular-nums;
 }
 
-// The 'bullet' character is too thick in FF More, so we use the bold version
-// of the midpoint (which is too thin in the regular weight).
 main ul li:before {
-  content: '·';
-  font-weight: 600;
+  content: '•';
 }
 
 //
@@ -723,7 +716,7 @@ footer {
   letter-spacing: 0.04em;
 }
 
-// Replace horizontal line element with three centered middots, spaced with en
+// Replace horizontal line element with three centered bullets, spaced with en
 // quads
 hr {
   text-align: center;
@@ -733,9 +726,8 @@ hr {
   border: none;
 }
 hr:before {
-    content: '· · ·';
+    content: '• • •';
     display: block;
-    font-size: 1.5rem;
 }
 
 // A div that spans the entire screen width
