@@ -1,87 +1,26 @@
 @font-face {
-  font-family: "ff-nuvo";
-  src:
-    url("https://use.typekit.net/af/8fa6e3/00000000000000003b9b0726/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"),
-    url("https://use.typekit.net/af/8fa6e3/00000000000000003b9b0726/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"),
-    url("https://use.typekit.net/af/8fa6e3/00000000000000003b9b0726/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+  font-family: 'titillium';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
+  src: url(https://fonts.gstatic.com/s/titilliumweb/v8/NaPecZTIAOhVxoMyOr9n_E7fdMPmDaZRbrw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 @font-face {
-  font-family: "ff-nuvo";
-  src:
-    url("https://use.typekit.net/af/e128bc/00000000000000003b9b0725/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff2"),
-    url("https://use.typekit.net/af/e128bc/00000000000000003b9b0725/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff"),
-    url("https://use.typekit.net/af/e128bc/00000000000000003b9b0725/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("opentype");
+  font-family: 'pt-serif';
   font-style: italic;
   font-weight: 400;
   font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ptserif/v11/EJRTQgYoZZY2vCFuvAFT_r21cgT9rcs.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 @font-face {
-  font-family: "ff-nuvo";
-  src:
-    url("https://use.typekit.net/af/24e284/00000000000000003b9b072a/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff2"),
-    url("https://use.typekit.net/af/24e284/00000000000000003b9b072a/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff"),
-    url("https://use.typekit.net/af/24e284/00000000000000003b9b072a/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("opentype");
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "ff-nuvo";
-  src:
-    url("https://use.typekit.net/af/14bd92/00000000000000003b9b0729/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3") format("woff2"),
-    url("https://use.typekit.net/af/14bd92/00000000000000003b9b0729/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3") format("woff"),
-    url("https://use.typekit.net/af/14bd92/00000000000000003b9b0729/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3") format("opentype");
-  font-style: italic;
-  font-weight: 700;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "ff-more";
-  src:
-    url("https://use.typekit.net/af/4122b8/00000000000000003b9b06fe/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"),
-    url("https://use.typekit.net/af/4122b8/00000000000000003b9b06fe/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"),
-    url("https://use.typekit.net/af/4122b8/00000000000000003b9b06fe/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+  font-family: 'pt-serif';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-}
-
-@font-face {
-  font-family: "ff-more";
-  src:
-    url("https://use.typekit.net/af/0de875/00000000000000003b9b06ff/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff2"),
-    url("https://use.typekit.net/af/0de875/00000000000000003b9b06ff/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff"),
-    url("https://use.typekit.net/af/0de875/00000000000000003b9b06ff/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("opentype");
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "ff-more";
-  src:
-    url("https://use.typekit.net/af/f23ec9/00000000000000003b9b0701/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3") format("woff2"),
-    url("https://use.typekit.net/af/f23ec9/00000000000000003b9b0701/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3") format("woff"),
-    url("https://use.typekit.net/af/f23ec9/00000000000000003b9b0701/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3") format("opentype");
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "ff-more";
-  src:
-    url("https://use.typekit.net/af/22f5c1/00000000000000003b9b0700/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i5&v=3") format("woff2"),
-    url("https://use.typekit.net/af/22f5c1/00000000000000003b9b0700/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i5&v=3") format("woff"),
-    url("https://use.typekit.net/af/22f5c1/00000000000000003b9b0700/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i5&v=3") format("opentype");
-  font-style: italic;
-  font-weight: 500;
-  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ptserif/v11/EJRVQgYoZZY2vCFuvAFWzr-_dSb_.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }

@@ -68,8 +68,8 @@ $sys-fonts:
   'Segoe UI Emoji',
   'Segoe UI Symbol';
 
-$serif-fonts: ff-more, $sys-fonts;
-$sans-fonts: ff-nuvo, $serif-fonts;
+$serif-fonts: pt-serif, $sys-fonts;
+$sans-fonts: titillium, $serif-fonts;
 
 // Use serif font for actual body content, and use sans for everything else
 body {
